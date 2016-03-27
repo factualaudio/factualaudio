@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Regenerates the hugo/static/plots directory, using gnuplot to rerender the
+# plots.
+
+set -e
+
+rm -rf hugo/static/plots
+mkdir -p hugo/static/plots
+
+cd gnuplot
+for PLOTPATH in plots/*.plt
+do
+	PLOTFILE="${PLOTPATH##*/}"
+	PLOTNAME="${PLOTFILE%.plt}"
+	gnuplot "$PLOTPATH" > "../hugo/static/plots/$PLOTNAME.svg"
+done

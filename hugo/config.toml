@@ -1,2 +1,13 @@
 title = "Factual Audio"
 languageCode = "en-gb"
+
+theme = "ghostwriter"
+copyright = "Etienne Dechamps"
+
+[Author]
+name = "Etienne Dechamps"
+
+[Params]
+intro = true
+headline = "Factual Audio"
+description = "The knowledge base for home audio enthusiasts"

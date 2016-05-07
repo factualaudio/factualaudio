@@ -142,3 +142,5 @@ Another source of complication is that speakers radiate sound in multiple direct
 [watts]: https://en.wikipedia.org/wiki/Watt
 [Woofers]: https://en.wikipedia.org/wiki/Woofer
 [xiphvideo]: https://xiph.org/video/
+
+{{< footnotes >}}

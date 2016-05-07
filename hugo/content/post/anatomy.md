@@ -84,3 +84,5 @@ Frequency-domain data can be converted back to the time domain using the appropr
 [time domain]: https://en.wikipedia.org/wiki/Time_domain
 [waveform]: https://en.wikipedia.org/wiki/Waveform
 [Weber-Fechner law]: https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law
+
+{{< footnotes >}}

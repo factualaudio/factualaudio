@@ -1,3 +1,9 @@
 [submodule "hugo/themes/ghostwriter"]
 	path = hugo/themes/ghostwriter
 	url = https://github.com/jbub/ghostwriter
+[submodule "hugo/static/bigfoot"]
+	path = hugo/static/bigfoot
+	url = https://github.com/lemonmade/bigfoot.git
+[submodule "hugo/static/jquery"]
+	path = hugo/static/jquery
+	url = https://github.com/jquery/jquery-dist.git

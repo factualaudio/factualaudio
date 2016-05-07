@@ -1,5 +1,5 @@
 +++
-title = "The three audio realms"
+title = "Life of an audio signal"
 date = "2016-03-27T20:54:18+01:00"
 description = "Analog / Digital / Acoustic"
 draft = true

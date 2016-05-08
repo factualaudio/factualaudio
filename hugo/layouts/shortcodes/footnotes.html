@@ -1,6 +1,13 @@
+{{/*
+	Call this shortcode once somewhere in a post for footnotes to be correctly formatted.
+	Also see layouts/shortcodes/footnote.html.
+*/}}
+<div class="footnotes"></div>
 <link rel="stylesheet" href="/bigfoot/dist/bigfoot-default.css">
 <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/bigfoot/dist/bigfoot.min.js"></script>
+<script type="text/javascript" src="/inline_footnotes.js"></script>
 <script type="text/javascript">
-        $.bigfoot();
+	// TODO: Bigfoot doesn't handle nested footnotes correctly.
+	$.bigfoot();
 </script>

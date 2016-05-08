@@ -1,0 +1,11 @@
+{{/*
+	This creates an inline footnote. See static/inline_footnote.js for details.
+	The output is defined in such a way that footnotes are still readable even if Javascript is
+	disabled (which is especially important for people using "readifiers").
+
+	NOTE: when editing this file, make sure not to add a final newline character
+	      (see https://github.com/spf13/hugo/issues/2134)
+
+	NOTE: be advised, link references don't work properly in the content of a shortcode. Links
+	      need to be fully inlined. (see https://github.com/spf13/hugo/issues/2131)
+*/}}<span class="inlineFootnote">[footnote: <span class="inlineFootnoteContent">{{ .Inner }}</span>]</span>

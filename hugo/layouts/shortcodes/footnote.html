@@ -8,4 +8,7 @@
 
 	NOTE: be advised, link references don't work properly in the content of a shortcode. Links
 	      need to be fully inlined. (see https://github.com/spf13/hugo/issues/2131)
+
+	NOTE: avoid nesting footnotes, bigfoot.js doesn't like that.
+	      (see https://github.com/lemonmade/bigfoot/issues/53)
 */}}<span class="inlineFootnote">[footnote: <span class="inlineFootnoteContent">{{ .Inner }}</span>]</span>

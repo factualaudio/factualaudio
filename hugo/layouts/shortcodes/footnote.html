@@ -11,4 +11,4 @@
 
 	NOTE: avoid nesting footnotes, bigfoot.js doesn't like that.
 	      (see https://github.com/lemonmade/bigfoot/issues/53)
-*/}}<span class="inlineFootnote">[footnote: <span class="inlineFootnoteContent">{{ .Inner }}</span>]</span>
+*/}}<span class="{{ .Get 0 }}"><span class="inlineFootnote">[{{ .Get 0 }}: <span class="inlineFootnoteContent">{{ .Inner }}</span>]</span></span>

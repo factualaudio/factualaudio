@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+FILE="$1"
+shift
+
+./markdown-tidy "$FILE" --output "$FILE.tidy" --frail "$@"
+diff -u "$FILE" "$FILE.tidy"
+rm -v "$FILE.tidy"

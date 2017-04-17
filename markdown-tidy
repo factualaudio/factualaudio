@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+# https://github.com/wooorm/remark
+exec remark --rc-path remarkrc.json "$@"

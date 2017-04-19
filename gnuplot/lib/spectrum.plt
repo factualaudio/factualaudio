@@ -6,4 +6,4 @@ set logscale x
 
 unset ytics
 
-set term svg size 400,250 font "sans-serif"
+set term svg size 600,250 font "sans-serif"

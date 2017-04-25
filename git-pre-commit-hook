@@ -28,3 +28,8 @@ do
 	./markdown-check "$POST"
 done
 
+if grep --files-with-matches --fixed-strings 'xmlns:v=' -- hugo/static/diagrams/*.svg
+then
+	echo "Please disable the 'include Visio data' option when exporting to SVG." >&2
+	exit 1
+fi

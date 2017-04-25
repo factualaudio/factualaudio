@@ -5,6 +5,6 @@ set -e
 FILE="$1"
 shift
 
-./markdown-tidy "$FILE" --output "$FILE.tidy" --frail "$@"
+./markdown-tidy "$FILE" --frail "$@" > "$FILE.tidy"
 diff -u "$FILE" "$FILE.tidy"
 rm -v "$FILE.tidy"

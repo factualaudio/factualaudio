@@ -13,7 +13,7 @@ An audio signal is an oscillating phenomenon: it is defined by a quantity that a
 
 Out of the infinity of shapes that an audio signal can take, probably the simplest is a *pure tone*, also called a *sine wave* from the name of the [mathematical function][sine] that it describes. Here is an example of a sine wave:
 
-{{% figure %}}![1kHz sine waveform](/plots/1khz-sine-wave.svg){{% /figure %}}
+{{% figure "/plots/1khz-sine-wave.svg" %}}
 
 The horizontal axis is time, which is why it is often said that this representation shows the signal in the *[time domain][]* (another term is *[waveform][]*). The above signal oscillates around the central value represented by the horizontal line. According to the horizontal scale, this particular signal repeats one thousand times per second: it has a *[frequency][]* of 1000 [hertz][]. In order to be audible, the frequency of the signal must sit between **20 Hz** and **20 kHz**: this interval is known as the *[audible range][]* of the human hearing system.
 
@@ -23,7 +23,7 @@ Amplitude is related to *[loudness][]*, in the sense that if we take a signal an
 
 Of course, most audio content is not a pure tone. In practice, a typical audio signal for, say, music, might look like this:
 
-{{% figure %}}![Musical waveform](/plots/piano-c5-wave.svg){{% /figure %}}
+{{% figure "/plots/piano-c5-wave.svg" %}}
 
 As the above image shows, a musical signal is way more complex than a pure tone. And that’s not even a complicated musical piece — this is pianist Joohyun Park, solo, playing a single note {{% footnote note %}}Specifically, this is one of the first notes played at the beginning of the *Allegro* track from *[The Music of Battlestar Galactica for Solo Piano](http://www.bearmccreary.com/blog/blog/battlestar-galactica-3/battlestar-galactica-solo-piano-cd/)*. {{% /footnote %}}. What’s really problematic, however, is that this representation doesn’t seem to relate to our perception at all — to the naked eye, it doesn’t look like a musical note played on a piano, it just looks like random data.
 
@@ -31,7 +31,7 @@ As the above image shows, a musical signal is way more complex than a pure tone.
 
 In order to make sense of such complex signals, we need a better way to look at the data. Fortunately, the above signal can be decomposed into a number of pure tones of various frequencies and amplitudes, thanks to the *[superposition principle][]*. The mathematical tool used to do the decomposition is called the *[Fourier transform][fourier]*. For example, if we were to apply the Fourier transform to our first pure tone example, the result could be represented as follows:
 
-{{% figure %}}![1kHz sine spectrum](/plots/1khz-sine-spectrum.svg){{% /figure %}}
+{{% figure "/plots/1khz-sine-spectrum.svg" %}}
 
 The vertical axis is still amplitude, but the horizontal axis has changed — it now represents frequency. This is why it is often said that this representation shows the signal in the *[frequency domain][]*, or, in other words, it shows the *[spectrum][]* of the signal.
 
@@ -39,7 +39,7 @@ A keen eye might have noticed that the horizontal axis is using a [logarithmic s
 
 The above plot is showing us that the signal can be decomposed into a single 1 kHz tone, but we already knew that. What’s more interesting is what happens when we apply the Fourier transform to the musical signal:
 
-{{% figure %}}![Musical spectrum](/plots/piano-c5-spectrum.svg){{% /figure %}}
+{{% figure "/plots/piano-c5-spectrum.svg" %}}
 
 Here things become interesting. This plot is telling us that our musical example can be decomposed into a 260 Hz tone with high amplitude, followed by 520 Hz and 780 Hz tones with lower amplitude.
 
@@ -50,7 +50,6 @@ This is interesting because we can directly relate what we see on the plot to ho
 Frequency-domain data can be converted back to the time domain using the appropriately-named *inverse Fourier transform*. One might wonder if any information gets lost during these conversions. From a purely mathematical point of view, the answer is no, but there is a catch. The above plots do not show the full output of the Fourier transform. In reality, the result of the Fourier transform includes *amplitude* information (which is shown above) and *[phase][]* information (which I omitted). Amplitude determines the levels of the constituent tones, while phase determines their *timing*, or in other words, how they are offset from each other in time. I opted not to mention phase until now because it is rarely useful when discussing audio equipment {{% footnote note %}}Audibility of [phase distortion](https://en.wikipedia.org/wiki/Phase_distortion) is a subject of [intense debate](http://www.silcom.com/~aludwig/Phase_audibility.htm). That said, obsessing about phase is unlikely to be a good use of time considering that even a single acoustic reflection (either at recording or at playback) will severely disrupt the phase response anyway. A notable exception is where there is a phase difference between two *channels* (e.g. left and right channels in a stereo system), in which case the effect is extremely audible — as any one who wired a speaker with the wrong polarity can attest.{{% /footnote %}}. As long as phase information is not discarded, it is possible to recover the original waveform, intact, simply by applying the [inverse Fourier transform][].
 
 {{% footnotes %}}
-{{% figures %}}
 
 [amplitude]: https://en.wikipedia.org/wiki/Amplitude
 

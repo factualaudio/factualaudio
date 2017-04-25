@@ -3,5 +3,5 @@
 FILE="$1"
 shift
 
-./markdown-tidy "$FILE" --output "$FILE.tidy" "$@"
+./markdown-tidy "$FILE" "$@" > "$FILE.tidy"
 mv -v "$FILE.tidy" "$FILE"

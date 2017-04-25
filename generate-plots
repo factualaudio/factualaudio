@@ -13,5 +13,13 @@ for PLOTPATH in plots/*.plt
 do
 	PLOTFILE="${PLOTPATH##*/}"
 	PLOTNAME="${PLOTFILE%.plt}"
-	gnuplot "$PLOTPATH" > "../hugo/static/plots/$PLOTNAME.svg"
+	gnuplot "$PLOTPATH" |
+	{
+		read -r LINE && echo "$LINE" # <?xml ...
+
+		# Ensure the font can be found
+		echo '<?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" ?>'
+
+		cat
+	} > "../hugo/static/plots/$PLOTNAME.svg"
 done

@@ -33,3 +33,9 @@ then
 	echo "Please disable the 'include Visio data' option when exporting to SVG." >&2
 	exit 1
 fi
+
+if ! grep --files-without-match --fixed-strings '<?xml-stylesheet' -- hugo/static/diagrams/*.svg
+then
+	echo "Please preserve the XML stylesheet specification on SVG diagrams." >&2
+	exit 1
+fi

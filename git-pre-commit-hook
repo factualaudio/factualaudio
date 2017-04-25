@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# To install this pre-commit git hook:
+# $ ln -s ../../git-pre-commit-hook .git/hooks/pre-commit
+
+set -e
+set -o pipefail
+shopt -s nullglob
+
+# If we're running as a git hook, stash the working directory first.
+# This way, we ensure the hook is running on the actual commit contents.
+if [[ -n "$GIT_DIR" ]]
+then
+	STASH_NAME="pre-commit-$(date +%Y%m%d-%H%M%S)-$(uuid)"
+	git stash save --keep-index --include-untracked "$STASH_NAME"
+
+	# Run the hook from the actual commit, which might be different from
+	# what is currently running.
+	RESULT=0
+	GIT_DIR= ./git-pre-commit-hook || RESULT="$?"
+
+	git stash pop
+	exit "$RESULT"
+fi
+
+for POST in hugo/content/post/*.md
+do
+	./markdown-check "$POST"
+done
+

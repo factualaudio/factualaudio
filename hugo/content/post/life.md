@@ -72,11 +72,13 @@ In order to reproduce the entire range of human hearing, several of these driver
 
 In modern audio systems, the subwoofer is often a separate speaker, for a number of reasons that I will not dig into here. {{% footnote note %}}Note that the “.1” channel of 5.1 or 7.1 systems, also called the *[LFE](https://en.wikipedia.org/wiki/Low-frequency_effects) channel*, is not quite the same thing as the subwoofer channel. The subwoofer typically receives audio signals both from the LFE channel and the other channels.{{% /footnote %}} In this case, the crossover that handles the subwoofer frequencies is found upstream of the loudspeaker — typically, it sits inside the AV receiver.
 
-What I’ve described here is called a *passive* speaker, which is the most common type in consumer “Hi-Fi” systems. Sometimes the amplifier and speaker are integrated into the same device; this is called an *active* or *[powered][]* speaker. Examples include professional “studio monitor” speakers, which have line-level inputs. Other products, such as “Bluetooth speakers”, go one step further and throw in a DAC as well for a completely integrated solution.
+What I’ve described here is called a *passive* loudspeaker, which is the most common type in consumer “Hi-Fi” systems. Sometimes the amplifier and speaker are integrated into the same device; this is called an *active* or *[powered][]* speaker. Examples include professional “studio monitor” speakers, which have line-level inputs. Other products, such as “Bluetooth speakers”, go one step further and throw in a DAC as well for a completely integrated solution.
 
-Speakers are mechanical and acoustic devices. As such, they are often bulkier, more complicated to design, and more expensive to produce compared to purely electronic devices that only deal with digital or analog audio signals. DACs and amplifiers are widely considered to be “solved problems” in audio engineering; in contrast, building a good loudspeaker is *hard*. On most performance metrics, even good speakers typically degrade the audio signal by one order of magnitude or more compared to most electronic devices.
+*[Headphones][]* are a special case and typically only have one driver per channel, which makes them simpler. Conceptually, a headphone is akin to a miniature loudspeaker. Because of their proximity to the ear, they don’t have to produce as much sound pressure; therefore they require much less power to operate (often less than 1 mW).
 
-Another source of complication is that speakers radiate sound in multiple directions, exhibiting *radiation patterns* that vary with frequency. This in turn means that they interact with their environment (the listening room) in ways that are difficult to predict but nonetheless have an enormous impact on how the radiated sound will be perceived by a human listener. This makes choosing and configuring a speaker system quite the challenge. Hopefully, future posts on this blog will be able to help.
+Speakers and headphones are mechanical and acoustic devices. As such, they are often bulkier, more complicated to design, and more expensive to produce compared to purely electronic devices that only deal with digital or analog audio signals. DACs and amplifiers are widely considered to be “solved problems” in audio engineering; in contrast, building a good loudspeaker or headphone is *hard*. On most performance metrics, even the best of them typically degrade the audio signal by one order of magnitude or more compared to most electronic devices.
+
+Another source of complication is that speakers radiate sound in multiple directions, exhibiting *radiation patterns* that vary with frequency. This in turn means that they interact with their environment (the listening room, or, in the case of headphones, the listener’s head) in ways that are difficult to predict but nonetheless have an enormous impact on how the radiated sound will be perceived by a human listener. This makes choosing and configuring a speaker system quite the challenge. Hopefully, future posts on this blog will be able to help.
 
 {{% footnotes %}}
 
@@ -93,6 +95,8 @@ Another source of complication is that speakers radiate sound in multiple direct
 [current]: https://en.wikipedia.org/wiki/Electric_current
 
 [flac]: https://en.wikipedia.org/wiki/FLAC
+
+[headphones]: https://en.wikipedia.org/wiki/Headphones
 
 [mp3]: https://en.wikipedia.org/wiki/MP3
 

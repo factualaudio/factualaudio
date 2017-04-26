@@ -1,6 +1,5 @@
 ---
 title: "Anatomy of an audio signal"
-Description: "Time and frequency"
 date: "2016-03-27T17:33:16+01:00"
 draft: true
 ---

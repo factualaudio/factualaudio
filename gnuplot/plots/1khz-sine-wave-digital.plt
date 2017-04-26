@@ -2,7 +2,7 @@ call "lib/waveform.plt"
 
 set samples 88
 
-set ytics
+set ytics (-32767,-16384,0,16384,32767)
 set ylabel "Sample value"
 
 set xlabel "Time in samples"

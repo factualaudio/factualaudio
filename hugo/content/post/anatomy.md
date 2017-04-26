@@ -41,7 +41,7 @@ The above plot is showing us that the signal can be decomposed into a single 1 k
 
 {{% figure "/plots/piano-c5-spectrum.svg" %}}
 
-Here things become interesting. This plot is telling us that our musical example can be decomposed into a 260 Hz tone with high amplitude, followed by 520 Hz and 780 Hz tones with lower amplitude.
+Here things become interesting. This plot is telling us that our musical example can be decomposed into a 260 Hz tone with high amplitude, combined with 520 Hz and 780 Hz tones of lower amplitude.
 
 Such a result is typical for a recording of a single instrument playing a single note. The first tone, at 260 Hz, is called the *[fundamental][]* and indicates the *[pitch][]* of the sound, in other words the note being played, [C5][] in this example. The 520 Hz and 780 Hz tones, because they are *multiples* of the fundamental, are called *[harmonics][]*. They are interpreted by the human hearing system to determine the *[timbre][]* of the instrument. If the same note was being played on say, a flute or a violin, the frequency of the fundamental would be the same but the relative amplitudes of the harmonics would be different.
 

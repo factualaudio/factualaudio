@@ -1,6 +1,6 @@
 {
 	"settings": {
-		"gfm": false,
+		"gfm": true,
 		"pedantic": true,
 		"string": "*",
 		"emphasis": "*"

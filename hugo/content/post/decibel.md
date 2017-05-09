@@ -17,7 +17,7 @@ However, in the audio litterature, marketing materials and equipment specificati
 In audio, we care more about *ratios* of quantities (e.g. "2×") than absolute values (e.g. "3 V"). To understand why, here’s an example:
 
 -   The difference in loudness between 0.1 Pa and 0.2 Pa is very noticeable.
--   The difference of loudness between 1.0 Pa and 1.1 Pa is barely noticeable.
+-   The difference in loudness between 1.0 Pa and 1.1 Pa is barely noticeable.
 
 In both cases the absolute difference is the same: 0.1 Pa. However, the ratio is very different; in the former case it’s 2×, in the latter case it’s 1.1×. This makes a compelling case for using ratios, not differences, when comparing amplitudes.
 

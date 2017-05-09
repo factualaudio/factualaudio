@@ -54,7 +54,7 @@ Note that all of the above assumes decibels are used to express ratios of [field
 
 # Using decibels for absolute values
 
-In theory, one could stick with linear units when dealing with absolute values (e.g. 2 V), and use decibels when dealing with ratios (e.g. 2×). However, when a calculation involves both, the mental gymnastics can be challenging. {{% footnote note %}}Not convinced? Try calculating 2 V - 11 dB by hand.{{% /footnote %}}
+In theory, one could stick with linear units when dealing with absolute values (e.g. 2 V), and use decibels when dealing with ratios (e.g. 2×). However, when a calculation involves both, the mental gymnastics can be challenging. {{% footnote note %}}Not convinced? Try calculating 2 V × -11 dB by hand.{{% /footnote %}}
 
 It would make more sense to use decibels for everything, including absolute quantities. Fortunately, that’s easy: we just need to agree on a reference, and then express in decibels the ratio between that reference and the quantity we wish to convey. The resulting decibel value is called *[level][]*. For example, if the reference is 1 V, then the level of 2 V is +6 dB. {{% footnote note %}}And the calculation from the previous note becomes 6 dB - 11 dB = -5 dB. Much easier!{{% /footnote %}}
 

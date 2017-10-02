@@ -36,7 +36,7 @@ That signal has the same peak amplitude as the previous example. Yet, it’s eas
 
 To solve this problem, we need a different metric. Ideally, we want to compute some kind of *average* of the signal. We can’t use the [mean][] — that would just amount to zero, since the positive and negative parts of the signal would cancel each other out.
 
-As it turns out, there is a standard way to compute the average value of an audio signal (or any alternative signal for that matter): the [root mean square][] (RMS). It’s a simple formula: we square the signal values, sum the squares, divide the result by the number of values, and then finally we take the square root of that number. {{% footnote note %}}For the sake of example, I’m assuming a discrete-time signal here.{{% /footnote %}} Because the values are squared, the positive and negative parts of the signal add up instead of cancelling each other.
+As it turns out, there is a standard way to compute the average value of an audio signal (or any alternative signal for that matter): the [root mean square][] (RMS). It’s a simple formula: we square the signal values, sum the squares, divide the result by the number of values, and then finally we take the square root of that number. {{% footnote note %}}For the sake of example, I’m assuming a discrete-time signal here.{{% /footnote %}} Because the values are squared, the positive and negative parts of the signal add up instead of canceling each other.
 
 If we apply that formula to the first example, we end up with ~0.707. More generally, for a pure sine wave (and *only* for a pure sine wave!), the math tells us RMS amplitude is equal to peak amplitude divided by the square root of two (√2). Or, when working in decibels, that’s peak amplitude minus ~3 dB.
 
@@ -47,7 +47,7 @@ When applied to the second example, we end up with ~0.238. As expected, we get a
 {{% figure "/plots/sine-wave-amplitude-detail.svg" %}}
 {{% figure "/plots/sinh-wave-amplitude-detail.svg" %}}
 
-We’ve seen that there is more than one way to quantify the amplitude of a signal, and that different approaches will produce different results depending on the shape of the waveform. Depending on the context in which the numbers are used, some approaches might be more appropriate than anothers.
+We’ve seen that there is more than one way to quantify the amplitude of a signal, and that different approaches will produce different results depending on the shape of the waveform. Depending on the context in which the numbers are used, some approaches might be more appropriate than others.
 
 In practice, the method used to calculate the amplitude is often stated near the unit. For example, “Vrms”, “Vp”, “Vpp”. Otherwise, it is typically assumed that RMS was used. In particular, levels expressed in decibels (e.g. "dBV"), are virtually always RMS {{%footnote ref %}}[IEC 60027–3:2002](https://webstore.iec.ch/publication/94), *Letter symbols to be used in electrical technology — Part 3: Logarithmic and related quantities, and their units*, §4.1{{% /footnote %}} (with the possible exception of dBFS, which sadly is [ambiguous][dbfs]).
 

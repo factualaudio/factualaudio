@@ -14,7 +14,7 @@ Now let me ask you a question: what is the amplitude of that signal?
 
 # Peak amplitude
 
-You might be tempted to answer that question with “1.0” {{% footnote note %}}Well, unless you are an audio engineer and you know what’s up. But in that case, what are you doing here?{{% /footnote %}}, because that’s the height of the curve above zero. Or perhaps you might answer “2.0”, because that’s the total height of the waveform (-1.0 to 1.0).
+You might be tempted to answer that question with “1.0” {{% footnote note %}}Well, unless you are an audio engineer and you know what’s up. But in that case, what are you doing here?{{% /footnote %}}, because that’s the height of the curve above zero. Or perhaps you might answer “2.0”, because that’s the total height of the waveform (-1.0 to 1.0).
 
 These are not the only possible answers (as we’ll see below), but they are valid answers nonetheless. The former answer ("1.0") is called the *peak amplitude* of the signal. The latter answer ("2.0") is called the *peak-to-peak amplitude* of the signal.
 
@@ -38,7 +38,7 @@ To solve this problem, we need a different metric. Ideally, we want to compute s
 
 As it turns out, there is a standard way to compute the average value of an audio signal (or any alternative signal for that matter): the [root mean square][] (RMS). It’s a simple formula: we square the signal values, sum the squares, divide the result by the number of values, and then finally we take the square root of that number. {{% footnote note %}}For the sake of example, I’m assuming a discrete-time signal here.{{% /footnote %}} Because the values are squared, the positive and negative parts of the signal add up instead of canceling each other.
 
-If we apply that formula to the first example, we end up with ~0.707. More generally, for a pure sine wave (and *only* for a pure sine wave!), the math tells us RMS amplitude is equal to peak amplitude divided by the square root of two (√2). Or, when working in decibels, that’s peak amplitude minus ~3 dB.
+If we apply that formula to the first example, we end up with ~0.707. More generally, for a pure sine wave (and *only* for a pure sine wave!), the math tells us RMS amplitude is equal to peak amplitude divided by the square root of two (√2). Or, when working in decibels, that’s peak amplitude minus ~3 dB.
 
 When applied to the second example, we end up with ~0.238. As expected, we get a lower value as the signal conveys less energy. In other words, the ratio of peak amplitude to RMS amplitude — known as the *[crest factor][]* {{% footnote note %}}Sometimes informally — and somewhat incorrectly — referred to as [dynamic range](https://en.wikipedia.org/wiki/Dynamic_range#Music) in some contexts.{{% /footnote %}} — is different because the shape of the waveform is different.
 

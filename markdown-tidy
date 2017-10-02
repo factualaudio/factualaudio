@@ -1,6 +1,5 @@
 #!/bin/sh -e
 
 # https://github.com/wooorm/remark
-# TODO: figure out a better way to handle shortcodes. https://github.com/wooorm/remark/issues/253
 remark --rc-path remarkrc.json "$@" |
-sed 's/{{% figure “\([^”]*\)” %}}/{{% figure "\1" %}}/'
+sed --regexp-extended --file=markdown.sed

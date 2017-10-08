@@ -40,7 +40,7 @@ As it turns out, there is a standard way to compute the average value of an audi
 
 If we apply that formula to the first example, we end up with ~0.707. More generally, for a pure sine wave (and *only* for a pure sine wave!), the math tells us RMS amplitude is equal to peak amplitude divided by the square root of two (√2). Or, when working in decibels, that’s peak amplitude minus ~3 dB.
 
-When applied to the second example, we end up with ~0.238. As expected, we get a lower value as the signal conveys less energy. In other words, the ratio of peak amplitude to RMS amplitude — known as the *[crest factor][]* {{% footnote note %}}Sometimes informally — and somewhat incorrectly — referred to as [dynamic range](https://en.wikipedia.org/wiki/Dynamic_range#Music) in some contexts.{{% /footnote %}} — is different because the shape of the waveform is different.
+When applied to the second example, we end up with ~0.424. As expected, we get a lower value as the signal conveys less energy. In other words, the ratio of peak amplitude to RMS amplitude — known as the *[crest factor][]* {{% footnote note %}}Sometimes informally — and somewhat incorrectly — referred to as [dynamic range](https://en.wikipedia.org/wiki/Dynamic_range#Music) in some contexts.{{% /footnote %}} — is different because the shape of the waveform is different.
 
 # Closing thoughts
 

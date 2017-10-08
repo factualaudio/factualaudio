@@ -1,25 +1,16 @@
 #!/bin/bash
 
-# Regenerates the hugo/static/plots directory, using gnuplot to rerender the
-# plots.
+# Regenerates the hugo/static/plots directory.
 
 set -e
 
 rm -rf hugo/static/plots
 mkdir -p hugo/static/plots
 
-cd gnuplot
-for PLOTPATH in plots/*.plt
+for PLOTPATH in m/plots/*.m
 do
 	PLOTFILE="${PLOTPATH##*/}"
-	PLOTNAME="${PLOTFILE%.plt}"
-	gnuplot "$PLOTPATH" |
-	{
-		read -r LINE && echo "$LINE" # <?xml ...
-
-		# Ensure the font can be found
-		echo '<?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" ?>'
-
-		cat
-	} > "../hugo/static/plots/$PLOTNAME.svg"
+	PLOTNAME="${PLOTFILE%.m}"
+	echo "GENERATING: $PLOTNAME"
+	./generate-plot "$PLOTNAME"
 done

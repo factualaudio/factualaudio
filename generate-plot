@@ -23,14 +23,5 @@ PLOTNAME="$PLOTNAME" PLOTSVGPATH="$PLOTSVGPATH.raw" \
 	xvfb-run --auto-servernum --server-args="-screen 0 2x2x24" \
 	octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();'
 
-{
-	read -r LINE && echo "$LINE" # <?xml ...
-
-	# Ensure the font can be found
-	echo '<?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" ?>'
-
-	# Changing the font from inside Octave doesn't work - see:
-	#   https://savannah.gnu.org/bugs/index.php?52193
-	sed 's/font-family="Helvetica"/font-family="Open Sans"/g'
-} < "$PLOTSVGPATH.raw" > "$PLOTSVGPATH"
+sed --file=../plot_svg.sed "$PLOTSVGPATH.raw" > "$PLOTSVGPATH"
 rm "$PLOTSVGPATH.raw"

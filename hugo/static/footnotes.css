@@ -10,3 +10,10 @@
 	margin-bottom: 1em;
 }
 
+.bigfoot-footnote__button::after {
+	/*
+	 * Override display: table from bigfoot.
+	 * It's not clear what it's for, but it seems to cause button height issues in tables.
+	 */
+	display: inherit;
+}

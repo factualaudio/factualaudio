@@ -32,7 +32,7 @@ In order to make sense of such complex signals, we need a better way to look at 
 
 {{% figure "/plots/1khz-sine-spectrum.svg" %}}
 
-The vertical axis is still amplitude, but the horizontal axis has changed — it now represents frequency. This is why it is often said that this representation shows the signal in the *[frequency domain][]*, or, in other words, it shows the *[spectrum][]* of the signal.
+The vertical axis is still amplitude, but the horizontal axis has changed — it now represents frequency. This representation shows the signal in the *[frequency domain][]*, or, in other words, it shows the *[spectral density][]* (often simply called *spectrum*) of the signal.
 
 A keen eye might have noticed that the horizontal axis is using a [logarithmic scale][], which is typical for this type of plot. This scale provides a better view of how we perceive sound: it is very easy to hear the difference between a 100 Hz tone and a 200 Hz tone, but the same cannot be said about 10000 Hz and 10100 Hz tones, even though the difference is still 100 Hz. This is because in the former case, there is a 100% increase, while in the latter case, the increase is only 1%. In other words, the human auditory system perceives *relative change*, as opposed to absolute change {{% footnote note %}}This is consistent with other human senses, as predicted by the [Weber-Fechner law](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law).{{% /footnote %}}. The term *[octave][]* is used to describe a frequency factor of *two*; for example, the range 2 kHz to 8 kHz is two octaves wide. The term *[decade][]* is also sometimes used, and describes a tenfold increase in frequency.
 
@@ -84,7 +84,7 @@ Frequency-domain data can be converted back to the time domain using the appropr
 
 [sine]: https://en.wikipedia.org/wiki/Sine
 
-[spectrum]: https://en.wikipedia.org/wiki/Spectral_density
+[spectral density]: https://en.wikipedia.org/wiki/Spectral_density
 
 [superposition principle]: https://en.wikipedia.org/wiki/Superposition_principle
 

@@ -8,6 +8,10 @@
 
 .bigfoot-footnote__content {
 	margin-bottom: 1em;
+
+	/* Correctly handle footnotes in legends */
+	text-align: left;
+	font-style: normal;
 }
 
 .bigfoot-footnote__button::after {

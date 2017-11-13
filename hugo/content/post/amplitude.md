@@ -14,11 +14,11 @@ Now let me ask you a question: what is the amplitude of that signal?
 
 # Peak amplitude
 
-You might be tempted to answer that question with “1.0” {{% footnote note %}}Well, unless you are an audio engineer and you know what’s up. But in that case, what are you doing here?{{% /footnote %}}, because that’s the height of the curve above zero. Or perhaps you might answer “2.0”, because that’s the total height of the waveform (-1.0 to 1.0).
+You might be tempted to answer that question with “1.0” {{% footnote note %}}Well, unless you are an audio engineer and you know what’s up. But in that case, what are you doing here?{{% /footnote %}}, because that’s the as far as the curve travels from its middle point. Or perhaps you might answer “2.0”, because that’s the total height of the waveform (-1.0 to 1.0).
 
 These are not the only possible answers (as we’ll see below), but they are valid answers nonetheless. The former answer ("1.0") is called the *peak amplitude* of the signal. The latter answer ("2.0") is called the *peak-to-peak amplitude* of the signal.
 
-For most intents and purposes, audio signals can be assumed to be symmetrical, so it is safe to assume that peak-to-peak amplitude is twice peak amplitude and both metrics convey the same information. In practice peak amplitude is more widely used than peak-to-peak amplitude. {{% footnote note %}}One notable exception is marketing material (including manufacturer-provided specifications), where peak-to-peak amplitude is often used because the number looks bigger — don’t be fooled!{{% /footnote %}}
+Peak-to-peak amplitude is twice the peak amplitude. {{% footnote note %}}Strictly speaking that’s a bit of an oversimplification, because it assumes that audio signals are symmetrical, but they often aren’t — see Hetrich, Wayne L., "[Real-World Audio Wave Form Asymmetries and the Effect on the Audio Chain](http://www.aes.org/e-lib/browse.cfm?elib=2221)", presented at the 55th AES Convention, New York, NY, USA, preprint 1193, (October 1976). However this rarely matters in practice.{{% /footnote %}} In practice peak amplitude is more widely used than peak-to-peak amplitude. {{% footnote note %}}One notable exception is marketing material (including manufacturer-provided specifications), where peak-to-peak amplitude is often used because the number looks bigger — don’t be fooled!{{% /footnote %}}
 
 # The problem with peak amplitude
 

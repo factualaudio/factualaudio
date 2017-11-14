@@ -61,8 +61,6 @@ So far I’ve been describing examples of non-linear distortion that can occur d
 
 So how audible is non-linear distortion? Well, that depends. Because non-linear distortion can take many forms, there is no simple answer. For example, distortion in the lower frequencies is less audible than in higher frequencies, and it is less audible if the newly introduced frequencies are close to the fundamental (thanks, once again, to masking). {{% footnote ref %}}Temme, Steve, "[Application Note: Audio Distortion Measurements](https://www.bksv.com/media/doc/BO0385.pdf)“, Brüel & Kjær, 1992.{{% /footnote %}} Condensing non-linear distortion measurements into a single, simplistic THD number, as is often done, certainly doesn’t help. With that in mind, real-world examples tend to suggest that a THD of 10% is likely to be audible, 1% is borderline, and 0.1% is unlikely to be audible. {{% footnote ref %}}Audioholics, ”[Human Hearing - Distortion Audibility Part 3](http://www.audioholics.com/room-acoustics/human-hearing-distortion-audibility-part-3)", 2005.{{% /footnote %}}
 
-{{% footnotes %}}
-
 [amplitude distortion]: https://en.wikipedia.org/wiki/Amplitude_distortion
 
 [bode plot]: https://en.wikipedia.org/wiki/Bode_plot

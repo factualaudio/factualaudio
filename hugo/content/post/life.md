@@ -68,8 +68,6 @@ What I’ve described here is called a *passive* loudspeaker, which is the most 
 
 One very important aspect of the acoustic realm is that sound propagates in all three dimensions — the audio signal (sound pressure) is not the same at every point in space. In particular, speakers exhibit *radiation patterns* that vary with angle and frequency, and the sound they emit can bounce off surfaces (*[reflection][]*). This in turn means that they interact with their environment (the listening room, or, in the case of headphones, the listener’s head) in ways that are complicated and difficult to predict but nonetheless have an enormous impact on how the radiated sound will be perceived by a human listener. This makes choosing and configuring a speaker system quite the challenge. Hopefully, future posts on this blog will be able to help.
 
-{{% footnotes %}}
-
 [aac]: https://en.wikipedia.org/wiki/Advanced_Audio_Coding
 
 [alternating]: https://en.wikipedia.org/wiki/Alternating_current

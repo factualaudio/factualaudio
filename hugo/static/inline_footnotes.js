@@ -1,7 +1,6 @@
 // Converts inline footnotes to traditional footnotes that bigfoot.js can recognize.
 $(function() {
-	var footnotes = $(".footnotes ol").last();
-	if (!footnotes.length) footnotes = $("<ol/>").appendTo($(".footnotes").last());
+	footnotes = $("<ol/>").appendTo($("<div/>", {"class": "footnotes"}).appendTo($("article")));
 
 	var inline_footnotes = $(".inlineFootnote");
 

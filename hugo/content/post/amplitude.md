@@ -53,8 +53,6 @@ In practice, the method used to calculate the amplitude is often stated near the
 
 What about *[loudness][]*? One could see loudness as the way us humans measure the amplitude of the sounds that reach our ears. Because the human auditory system is extremely complex, it is not easy to estimate how loud a given signal will be perceived in general. Of the two approaches that I’ve described, RMS is the one that approximates loudness best, but it is still a very crude estimation. Nonetheless, in practice, RMS amplitude is often used as a poor man’s proxy for loudness due to its simplicity. More perceptually accurate ways to estimate loudness would typically involve *[weighting][]* or even more advanced processes such as those described in [ITU-R BS.1770][]. But that’s a story for another post.
 
-{{% footnotes %}}
-
 [crest factor]: https://en.wikipedia.org/wiki/Crest_factor
 
 [dbfs]: https://en.wikipedia.org/wiki/DBFS

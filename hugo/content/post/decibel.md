@@ -71,8 +71,6 @@ Sometimes the suffix is omitted and has to be inferred from the context. For exa
 
 Additional suffixes and variants are often used to convey additional information. The most common examples include “peak” or “RMS”, which denote different ways of looking at the amplitude of the signal, and “dBA”, which indicates the use of [A-weighting][]. More on these in later posts.
 
-{{% footnotes %}}
-
 [a-weighting]: https://en.wikipedia.org/wiki/A-weighting
 
 [dbcalc]: http://www.sengpielaudio.com/calculator-db.htm

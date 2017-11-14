@@ -2,3 +2,11 @@ ul li {
 	line-height: 1.8;
 	margin-bottom: 10px;
 }
+
+.legend {
+	text-align: center;
+	margin: 5em;
+	margin-top: -30px;
+	margin-bottom: 0px;
+	font-style: italic;
+}

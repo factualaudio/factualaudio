@@ -11,8 +11,9 @@ $(function() {
 		var index = footnotes.children("li").length + 1;
 		var id = "inline:" + index;
 
-		var bigfootnote = $("<sup/>", {"id": "fnref:" + id}).append(
-			$("<a/>", {"href": "#fn:" + id, rel: "footnote", text: index}));
+		var bigfootnote = $("<span/>", {"class": $(this).attr("class")}).append(
+			$("<sup/>", {"id": "fnref:" + id}).append(
+				$("<a/>", {"href": "#fn:" + id, rel: "footnote", text: index})));
 		$(this).after(bigfootnote);
 
 		var item = $("<li/>", {"id": "fn:" + id}).append(
@@ -24,10 +25,9 @@ $(function() {
 	// Second pass: move the contents of the inline footnotes into the list.
 	// We process the list in reverse so that innermost footnotes are processed first.
 	$(inline_footnotes.get().reverse()).each(function() {
-		var contents = $(this).find(".inlineFootnoteContent").contents();
-		if (!contents.length) contents = $(this).contents();
-		$(this).data("inlineFootnoteItem").prepend(contents);
-
+		$(this).data("inlineFootnoteItem").prepend($(this).contents());
 		$(this).remove();
 	});
+
+	$('.inlineFootnoteDecoration').remove();
 });

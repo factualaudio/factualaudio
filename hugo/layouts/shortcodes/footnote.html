@@ -1,7 +1,7 @@
 {{/*
 	This creates an inline footnote. See static/inline_footnote.js for details.
 	The output is defined in such a way that footnotes are still readable even if Javascript is
-	disabled (which is especially important for people using "readifiers").
+	disabled (which is especially important for people using RSS readers and "readifiers").
 
 	NOTE: when editing this file, make sure not to add a final newline character
 	      (see https://github.com/spf13/hugo/issues/2134)
@@ -11,4 +11,7 @@
 
 	NOTE: avoid nesting footnotes, bigfoot.js doesn't like that.
 	      (see https://github.com/lemonmade/bigfoot/issues/53)
-*/}}<span class="{{ .Get 0 }}"><span class="inlineFootnote">[{{ .Get 0 }}: <span class="inlineFootnoteContent">{{ .Inner }}</span>]</span></span>
+
+	NOTE: be very careful when changing the markup. Pocket Article view doesn't seem to like
+	      nested spans, for example, and might omit contents at random.
+*/}}<strong class="inlineFootnoteDecoration"> [{{ .Get 0 }}] </strong><span class="inlineFootnote {{ .Get 0 }}">{{ .Inner }}</span><strong class="inlineFootnoteDecoration"> [end {{ .Get 0 }}] </strong>

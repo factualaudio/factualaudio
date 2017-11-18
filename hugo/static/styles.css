@@ -16,3 +16,27 @@ ul li {
 	font-size: 0.9em;
 	line-height: 2.5ex;
 }
+
+.inlineFootnote-note .bigfoot-footnote__button {
+	background-color: #f03838;
+}
+
+.inlineFootnote-ref .bigfoot-footnote__button {
+	background-color: rgb(200, 200, 200);
+}
+
+.bigfoot-footnote__content {
+	margin-bottom: 1em;
+
+	/* Correctly handle footnotes in legends */
+	text-align: left;
+	font-style: normal;
+}
+
+.bigfoot-footnote__button::after {
+	/*
+	 * Override display: table from bigfoot.
+	 * It's not clear what it's for, but it seems to cause button height issues in tables.
+	 */
+	display: inherit;
+}

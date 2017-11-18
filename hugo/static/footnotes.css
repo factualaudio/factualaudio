@@ -1,8 +1,8 @@
-.note .bigfoot-footnote__button {
+.inlineFootnote-note .bigfoot-footnote__button {
 	background-color: #f03838;
 }
 
-.ref .bigfoot-footnote__button {
+.inlineFootnote-ref .bigfoot-footnote__button {
 	background-color: rgb(200, 200, 200);
 }
 

@@ -12,7 +12,7 @@ Before this digital content can reach your eardrums, it has to go through a seri
 
 To keep things clear and simple, the example signal I’ll use throughout this post is a monophonic (one channel) 1 kHz sine wave. For all intents of purposes, each additional channel can be assumed to act like a completely separate audio signal that takes a similar path through the system.
 
-{{% figure "/diagrams/realms.svg" %}}
+{{% figure "/diagrams/realms" %}}
 
 # The digital realm
 
@@ -20,7 +20,7 @@ It all starts within the digital device, which can be any computer or computer-l
 
 [Digital compression][] {{% footnote note %}}Not to be confused with *[dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression)*, which is completely unrelated.{{% /footnote %}} is a complicated subject, which I won’t dig into further in this post. In any case, the data first goes through a *decoder* which converts the compressed signal into uncompressed form, which looks like this:
 
-{{% figure "/plots/1khz-sine-wave-digital.svg" %}}
+{{% figure "/plots/1khz-sine-wave-digital" %}}
 
 This plot shows that, in the digital realm, audio is not represented by a continuous, smoothly changing signal — instead, all we have are regularly-spaced “snapshots” that indicate what the signal amplitude is at some point in time. This is called a *[discrete signal][]*, and the “snapshots” are called *samples*. In this example, we have 44100 samples every second, or more formally, the *sample rate* is 44.1 kHz. Such a sample rate is standard for music — other types of content, such as movies or games, use a slightly higher rate, 48 kHz, for mostly historical reasons.
 
@@ -34,7 +34,7 @@ This section just skirted the surface of how digital audio works. The details of
 
 Loudspeakers and headphones cannot receive a digital signal; it has to be converted to an *analog* signal first. This conversion is done in an electronic circuit appropriately named the *[digital-to-analog converter][]*, or DAC. This is where computer engineering ends and electrical engineering begins. The main task of the DAC is to take each sample value and convert it to some electrical *[voltage][]* on its output pins. The resulting signal looks like the following:
 
-{{% figure "/plots/1khz-sine-wave-analog.svg" %}}
+{{% figure "/plots/1khz-sine-wave-analog" %}}
 
 It is important to realize that in the plot above, the unit used for the vertical scale is the *[volt][]*. In other words, the audio signal in the analog domain is defined by its *voltage*. It is *not* defined by [current][] nor [power][]. Even when the signal is used as the input of a loudspeaker, it is still voltage that determines the sound that comes out; power dissipation is a *consequence*, not a *cause*, of the audio signal flowing through the loudspeaker. As Pat Brown [elegantly puts it][patbrown]: "power is *drawn*, not applied". Another way to state this is to say that properly engineered analog audio devices act as *[voltage sources][]*, which are connected to each other by way of *[impedance bridging][]*. This is a frequent source of confusion.
 
@@ -54,7 +54,7 @@ In some home audio systems, the DAC and the amplifier are integrated into one si
 
 Finally, in order to reach your ears, the analog signal must be converted to an *acoustic* signal, that is, actual [sound waves][]. This is accomplished using a device called an *electroacoustic [transducer][]*, or *driver*. The output of a driver when excited with our example signal, as measured at some point in front of it, might look like the following:
 
-{{% figure "/plots/1khz-sine-wave-acoustic.svg" %}}
+{{% figure "/plots/1khz-sine-wave-acoustic" %}}
 
 Note the change of vertical scale. We’re not dealing with voltage anymore — we’re dealing with *[sound pressure][]* instead. Indeed, sound is a physical phenomenon in which transient changes in pressure (*compression*, *rarefaction*) produced by the vibration of a *sound source* propagate through the space around it. In other words, it is a *[longitudinal wave][]*. Sound pressure, expressed in *[Pascals][]* (Pa), quantifies the difference between normal atmospheric pressure and some local, dynamic change in pressure, at a given point in time and space. The human ear is equipped to detect these changes, which are then — finally! — perceived as sound by the human brain.
 

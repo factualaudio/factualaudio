@@ -7,5 +7,5 @@ function generate_plot()
 	set(gcf(), 'visible', 'off');
 	source([ 'plots/' getenv('PLOTNAME') '.m' ]);
 	%set_plot_margins();
-	print(getenv('PLOTSVGPATH'), '-dsvg');
+	print(getenv('PLOTPATH'), [ '-d' getenv('PLOTTYPE') ]);
 endfunction

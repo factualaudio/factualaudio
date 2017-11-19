@@ -14,3 +14,4 @@ profile = "/page/about/"
 intro = true
 headline = "Factual Audio"
 description = "The knowledge base for home audio enthusiasts"
+shareGooglePlus = false

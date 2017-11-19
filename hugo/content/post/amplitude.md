@@ -8,7 +8,7 @@ In the last series of posts I’ve been focusing on the concept of amplitude, fi
 
 The attentive reader might have observed that, back in that very first post, I deliberately left out an important part for later. The issue that still needs to be addressed is exactly how to *quantify* amplitude, i.e. how do we calculate its value for a given audio signal. Let’s go back to our original example of a pure tone (sine) waveform, but with a vertical scale this time:
 
-{{% figure "/plots/sine-wave-amplitude" %}}
+{{% figure "plots/sine-wave-amplitude" %}}
 
 Now let me ask you a question: what is the amplitude of that signal?
 
@@ -28,7 +28,7 @@ Not so fast. Let’s not forget that amplitude is used in a variety of contexts 
 
 Peak amplitude is appropriate in *some* contexts. For example, if you’re trying to determine whether a digital signal is going to clip, peak amplitude is definitely the metric you should use to make that determination. But in most cases, what we’re most interested in is the amount of *energy* that is being conveyed in that audio signal *on average*. {{% footnote note %}}"Energy" is used here in a generic sense, as physically speaking there is no “energy” in a digital signal for example. However it does map directly to the physical definition of energy when the signal enters the analog or acoustic realms, and since the acoustic realm is really all that matters in the end, it makes sense to use that term to describe audio signals in general.{{% /footnote %}} Peak amplitude fares poorly in that scenario. To understand why, let’s look at an extreme example of a signal that is very different from a sine wave:
 
-{{% figure "/plots/sinh-wave-amplitude" %}}
+{{% figure "plots/sinh-wave-amplitude" %}}
 
 That signal has the same peak amplitude as the previous example. Yet, it’s easy to see that it conveys less energy: it’s mostly silence only interrupted by a train of narrow peaks. That makes peak amplitude ill-suited for estimating the overall strength of the signal.
 
@@ -44,8 +44,8 @@ When applied to the second example, we end up with ~0.424. As expected, we get a
 
 # Closing thoughts
 
-{{% figure "/plots/sine-wave-amplitude-detail" %}}
-{{% figure "/plots/sinh-wave-amplitude-detail" %}}
+{{% figure "plots/sine-wave-amplitude-detail" %}}
+{{% figure "plots/sinh-wave-amplitude-detail" %}}
 
 We’ve seen that there is more than one way to quantify the amplitude of a signal, and that different approaches will produce different results depending on the shape of the waveform. Depending on the context in which the numbers are used, some approaches might be more appropriate than others.
 

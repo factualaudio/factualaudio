@@ -6,6 +6,7 @@ copyright = "Etienne Dechamps"
 
 [Author]
 name = "Etienne Dechamps"
+email = "etienne@edechamps.fr"
 
 [Params]
 intro = true

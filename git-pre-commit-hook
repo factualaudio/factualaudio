@@ -23,9 +23,9 @@ then
 	exit "$RESULT"
 fi
 
-for POST in hugo/content/post/*.md
+for MARKDOWN_FILE in hugo/content/*/*.md
 do
-	./markdown-check "$POST"
+	./markdown-check "$MARKDOWN_FILE"
 done
 
 if grep --files-with-matches --fixed-strings 'xmlns:v=' -- hugo/static/diagrams/*.svg

@@ -1,0 +1,15 @@
+---
+title: "About Factual Audio"
+date: "2017-11-19T15:26:00+01:00"
+draft: true
+---
+
+Factual Audio is dedicated to delivering objective, trustworthy, reliable, evidence-backed information about audio, in particular audio playback in the home and on the move. This includes for example “Hi-Fi” systems, “home cinema” systems, and headphones. The main goal of this website is to educate the general public about audio matters through critical thinking and a sound, rational, scientific approach to assessing audio claims and products.
+
+Factual Audio is a completely independent entity with a strong focus on integrity, transparency and full disclosure. It does not have a commercial or monetary purpose, is not affiliated with any company or organization, does not run ads, and does not accept paid promotion of any kind.
+
+While Factual Audio strives to maintain a high standard of scientific accuracy, no-one is immune from making mistakes, and new discoveries can sometimes compel us to revise our understanding. If you believe that Factual Audio has made factually incorrect claims, used outdated information, misrepresented evidence, ignored contradictory evidence, or has failed to provide appropriate citations for controversial statements, please don’t hesitate to get in touch using the contact details below.
+
+# Contact
+
+Owner and editor: [Etienne Dechamps](mailto:etienne@edechamps.fr)

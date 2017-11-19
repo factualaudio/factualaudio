@@ -40,3 +40,12 @@ ul li {
 	 */
 	display: inherit;
 }
+
+.footer-about {
+	color: #656565;
+	font-size: 14px;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}

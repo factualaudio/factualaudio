@@ -12,7 +12,3 @@ email = "etienne@edechamps.fr"
 intro = true
 headline = "Factual Audio"
 description = "The knowledge base for home audio enthusiasts"
-
-[[menu.main]]
-name = "About"
-url = "/page/about/"

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Generates the site and publishes it to the master branch on the provided git repository.
+# All other options are passed to hugo.
+
+set -e
+set -o pipefail
+shopt -s nullglob
+
+REMOTE="$1"
+shift
+
+WORK_DIR=''
+cleanup() {
+	[[ -n "$WORK_DIR" ]] && rm -rf "$WORK_DIR"
+}
+trap cleanup EXIT
+
+SOURCE_COMMIT="$(git rev-parse --verify HEAD)"
+HUGO_VERSION="$(hugo version)"
+read -r OCTAVE_VERSION < <(octave --version)
+
+WORK_DIR="$(mktemp --directory --suffix=.factualaudio-publish)"
+git init "$WORK_DIR"
+
+./generate-plots
+hugo --source hugo --destination "$WORK_DIR" "$@"
+
+cd "$WORK_DIR"
+git add .
+
+git remote add origin "$REMOTE"
+git fetch origin master --depth=1
+git reset --soft origin/master
+git commit \
+	--message="Publishing from source repository commit $SOURCE_COMMIT" \
+	--message "Hugo version: $HUGO_VERSION" \
+	--message "Octave version: $OCTAVE_VERSION"
+
+git show || true
+echo -n "Confirm push? (y) " >&2
+read -r ANSWER
+[[ "$ANSWER" = 'y' ]] || exit 1
+
+git push origin master
+

@@ -10,9 +10,11 @@ Factual Audio is a completely independent entity with a strong focus on integrit
 
 While Factual Audio strives to maintain a high standard of scientific accuracy, no-one is immune from making mistakes, and new discoveries can sometimes compel us to revise our understanding. If you believe that Factual Audio has made factually incorrect claims, used outdated information, misrepresented evidence, ignored contradictory evidence, or has failed to provide appropriate citations for controversial statements, please don’t hesitate to get in touch using the contact details below.
 
-# License and copyright
+# Source code, license and copyright
 
-All article text, figures and images on this website are licensed under the [Creative Commons Attribution 4.0 International License][cc], unless explicitly mentioned otherwise.
+The source code that this website is built from is freely available in a [public repository][].
+
+All article text, figures and images on this website are licensed under the [Creative Commons Attribution 4.0 International License][cc], unless explicitly mentioned otherwise. This also applies to source code.
 
 Note that most decorative or stylistic elements come from the [Hugo][], [Hugo Ghostwriter theme][] and [bigfoot.js][] projects, which come with their own licenses.
 
@@ -27,3 +29,5 @@ Owner and editor: [Etienne Dechamps](mailto:etienne@edechamps.fr)
 [hugo]: https://gohugo.io/
 
 [hugo ghostwriter theme]: https://github.com/roryg/ghostwriter
+
+[public repository]: https://github.com/factualaudio/factualaudio

@@ -1,7 +1,6 @@
 ---
 title: "Decibels, explained"
-date: "2017-04-26T20:00:00+01:00"
-draft: true
+date: "2017-11-21T21:03:00+01:00"
 ---
 
 In the [previous post](<{{% ref "life.md" %}}>), I introduced a number of physical quantities that are used to describe the *[amplitude](<{{% ref "anatomy.md" %}}>)* of an audio signal:

@@ -1,7 +1,6 @@
 ---
 title: "Amplitude, quantified"
-date: "2017-09-09T20:00:00+01:00"
-draft: true
+date: "2017-11-21T21:04:00+01:00"
 ---
 
 In the last series of posts I’ve been focusing on the concept of amplitude, first [defining it](<{{% ref "anatomy.md" %}}>) as the strength of an audio signal, then [describing its physical manifestations](<{{% ref "life.md" %}}>) as the signal makes its way through the audio playback chain, and lastly explaining how [decibels](<{{% ref "decibel.md" %}}>) are used as a way to manipulate these numbers.

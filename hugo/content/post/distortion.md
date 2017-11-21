@@ -1,7 +1,6 @@
 ---
 title: "Noise and distortion"
-date: "2017-09-10T14:00:00+01:00"
-draft: true
+date: "2017-11-21T21:05:00+01:00"
 ---
 
 As the audio signal makes its way through the different [realms](<{{% ref "life.md" %}}>) of the system, it travels through various digital, analog, and acoustic components that alter the signal in various ways. Some of these alterations might or might not be audible, or might only be audible under certain conditions. In most scenarios relevant to this blog they are undesirable side effects from limitations in the components that make up the system, though in some specific cases they can be deliberately introduced in pursuit of a specific goal (e.g. [equalization][]).

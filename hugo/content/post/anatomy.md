@@ -1,7 +1,6 @@
 ---
 title: "Anatomy of an audio signal"
-date: "2016-03-27T17:33:16+01:00"
-draft: true
+date: "2017-11-21T21:01:00+01:00"
 ---
 
 This inaugural Factual post will start from first principles, by laying down some of the fundamental foundations necessary to start reasoning about audio signals. I will then build on these principles in the posts to follow.

@@ -1,7 +1,6 @@
 ---
 title: "Life of an audio signal"
-date: "2016-03-27T20:54:18+01:00"
-draft: true
+date: "2017-11-21T21:02:00+01:00"
 ---
 
 In the [previous post](<{{% ref "anatomy.md" %}}>), I described what an audio signal is. Now, let’s discuss how this signal is concretely represented as it passes through each stage of a typical home audio playback system.

@@ -8,7 +8,7 @@ Factual Audio is dedicated to delivering objective, trustworthy, reliable, evide
 
 Factual Audio is a completely independent entity with a strong focus on integrity, transparency and full disclosure. It does not have a commercial or monetary purpose, is not affiliated with any company or organization, does not run ads, and does not accept paid promotion of any kind.
 
-While Factual Audio strives to maintain a high standard of scientific accuracy, no-one is immune from making mistakes, and new discoveries can sometimes compel us to revise our understanding. If you believe that Factual Audio has made factually incorrect claims, used outdated information, misrepresented evidence, ignored contradictory evidence, or has failed to provide appropriate citations for controversial statements, please don’t hesitate to get in touch using the contact details below.
+While Factual Audio strives to maintain a high standard of scientific accuracy, no-one is immune from making mistakes, and new discoveries can sometimes compel us to revise our understanding. If you believe that Factual Audio has made factually incorrect claims, used outdated information, misrepresented evidence, ignored contradictory evidence, or has failed to provide appropriate citations for controversial statements, please don’t hesitate to provide feedback by posting a comment on the article or to get in touch using the contact details below.
 
 # Source code, license and copyright
 

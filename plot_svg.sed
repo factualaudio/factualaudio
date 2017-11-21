@@ -11,3 +11,6 @@
 # Changing the font from inside Octave doesn't work - see:
 #   https://savannah.gnu.org/bugs/index.php?52193
 s/font-family="Helvetica"/font-family="Open Sans"/g
+
+# Remove the creation date, as it pollutes diffs when publishing.
+/^CreationDate:.\+$/d

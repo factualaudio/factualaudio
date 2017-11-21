@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# This is the main deployment script: it fetches the contents of the
+# factualaudio master branch on GitHub, and publishes it to the actual
+# production website.
+
+set -e
+set -o pipefail
+shopt  -s nullglob
+
+WORK_DIR=''
+cleanup() {
+        [[ -n "$WORK_DIR" ]] && rm -rf "$WORK_DIR"
+}
+trap cleanup EXIT
+WORK_DIR="$(mktemp --directory --suffix=.factualaudio-sync-master)"
+
+git clone git@github.com:factualaudio/factualaudio.git --depth 1 --branch master "$WORK_DIR"
+cd "$WORK_DIR"
+git submodule init
+git submodule update --depth=1
+./publish git@github.com:factualaudio/factualaudio.github.io.git --baseURL 'https://factualaudio.com/'

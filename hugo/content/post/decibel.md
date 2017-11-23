@@ -49,7 +49,7 @@ Because the decibel is a logarithmic unit, it behaves differently from more conv
 -   0× is -∞ dB (negative infinity). You might have seen this as the “mute” position on some volume knobs.
 -   For less trivial cases, [online calculators][dbcalc] are available.
 
-Note that all of the above assumes decibels are used to express ratios of [field quantities][]. Digital sample value, voltage, and sound pressure are examples of field quantities. When dealing with *power* quantities (i.e. watts), however, there is a catch: in that case, +6 dB is 4×, not 2×, which is +3 dB. This might seem strange and confusing, but once again there is an explanation: in practice power is proportional to the *square* of the field quantity. So, for example, when voltage is doubled, power quadruples. Or, said differently, if voltage is increased by 6 dB, then power increases by… 6 dB — which is why the rules makes sense.
+{{% caution %}}All of the above assumes decibels are used to express ratios of [field quantities](https://en.wikipedia.org/wiki/Field,_power,_and_root-power_quantities). Digital sample value, voltage, and sound pressure are examples of field quantities. When dealing with *power* quantities (i.e. watts), however, there is a catch: in that case, +6 dB is 4×, not 2×, which is +3 dB. This might seem strange and confusing, but once again there is an explanation: in practice power is proportional to the *square* of the field quantity. So, for example, when voltage is doubled, power quadruples. Or, said differently, if voltage is increased by 6 dB, then power increases by… 6 dB — which is why the rules makes sense.{{% /caution %}}
 
 # Using decibels for absolute values
 
@@ -83,8 +83,6 @@ Additional suffixes and variants are often used to convey additional information
 [dbu]: https://en.wikipedia.org/wiki/Decibel#Voltage
 
 [dimensionless unit]: https://en.wikipedia.org/wiki/Dimensionless_quantity
-
-[field quantities]: https://en.wikipedia.org/wiki/Field,_power,_and_root-power_quantities
 
 [gain]: https://en.wikipedia.org/wiki/Gain_%28electronics%29
 

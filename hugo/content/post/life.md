@@ -35,7 +35,7 @@ Loudspeakers and headphones cannot receive a digital signal; it has to be conver
 
 {{% figure "plots/1khz-sine-wave-analog" %}}
 
-It is important to realize that in the plot above, the unit used for the vertical scale is the *[volt][]*. In other words, the amplitude of the audio signal in the analog domain is defined by its *voltage*. It is *not* defined by [current][] nor [power][]. Even when the signal is used as the input of a loudspeaker, it is still voltage that determines the sound that comes out; power dissipation is a *consequence*, not a *cause*, of the audio signal flowing through the loudspeaker. As Pat Brown [elegantly puts it][patbrown]: "power is *drawn*, not applied". {{% footnote note %}}Another way to state this is to say that properly engineered analog audio devices act as *[voltage sources](https://en.wikipedia.org/wiki/Voltage_source)* (or sinks), which are connected to each other by way of *[impedance bridging](https://en.wikipedia.org/wiki/Impedance_bridging)*.{{% /footnote %}} This is a frequent source of confusion.
+{{% caution %}}In the plot above, the unit used for the vertical scale is the *[volt](https://en.wikipedia.org/wiki/Volt)*. In other words, the amplitude of the audio signal in the analog domain is defined by its *voltage*. It is *not* defined by [current](https://en.wikipedia.org/wiki/Electric_current) nor [power](https://en.wikipedia.org/wiki/Electric_power). Even when the signal is used as the input of a loudspeaker, it is still voltage that determines the sound that comes out; power dissipation is a *consequence*, not a *cause*, of the audio signal flowing through the loudspeaker. As Pat Brown [elegantly puts it](http://www.prosoundtraining.com/site/author/pat-brown/meaningful-metrics-the-use-and-abuse-of-loudspeaker-power-ratings/): "power is *drawn*, not applied". {{% footnote note %}}Another way to state this is to say that properly engineered analog audio devices act as *[voltage sources](https://en.wikipedia.org/wiki/Voltage_source)* (or sinks), which are connected to each other by way of *[impedance bridging](https://en.wikipedia.org/wiki/Impedance_bridging)*.{{% /footnote %}}{{% /caution %}}
 
 The DAC took our discrete signal and converted it into a continuous electrical signal, whose voltage is (hopefully) *proportional* to the digital sample value. The central (mean) value of the signal, called the *[DC offset][]*, is zero volts; the signal swings around that central value, *[alternating][]* between positive and negative voltage. In this example, our full-scale digital stream was converted to an analog signal that swings between -1.41 V and +1.41 V. Depending on the specific model of DAC used, its volume control setting (if any) and the signals involved, these numbers can vary — typical peak amplitude can go as low as 0.5 V {{% footnote ref %}}Wikipedia, *[Nominal levels](https://en.wikipedia.org/wiki/Line_level#Nominal_levels)*, peak amplitude for consumer audio{{% /footnote %}} or as high as 2.8 V {{% footnote ref %}}[IEC 61938:2013](https://webstore.iec.ch/publication/6142), *Guide to the recommended characteristics of analogue interfaces to achieve interoperability*, §8.2.1{{% /footnote %}}.
 
@@ -77,8 +77,6 @@ One notable aspect of the acoustic realm is that sound propagates in all three d
 
 [crossover]: https://en.wikipedia.org/wiki/Audio_crossover
 
-[current]: https://en.wikipedia.org/wiki/Electric_current
-
 [flac]: https://en.wikipedia.org/wiki/FLAC
 
 [headphones]: https://en.wikipedia.org/wiki/Headphones
@@ -115,10 +113,6 @@ One notable aspect of the acoustic realm is that sound propagates in all three d
 
 [pascals]: https://en.wikipedia.org/wiki/Pascal_%28unit%29
 
-[patbrown]: http://www.prosoundtraining.com/site/author/pat-brown/meaningful-metrics-the-use-and-abuse-of-loudspeaker-power-ratings/
-
-[power]: https://en.wikipedia.org/wiki/Electric_power
-
 [powered]: https://en.wikipedia.org/wiki/Powered_speakers
 
 [power amplifier]: https://en.wikipedia.org/wiki/Audio_power_amplifier
@@ -138,8 +132,6 @@ One notable aspect of the acoustic realm is that sound propagates in all three d
 [transducer]: https://en.wikipedia.org/wiki/Transducer
 
 [tweeters]: https://en.wikipedia.org/wiki/Tweeter
-
-[volt]: https://en.wikipedia.org/wiki/Volt
 
 [voltmeter]: https://en.wikipedia.org/wiki/Voltmeter
 

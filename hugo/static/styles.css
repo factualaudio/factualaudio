@@ -3,6 +3,16 @@ ul li {
 	margin-bottom: 10px;
 }
 
+.caution {
+	border: 3px solid #f03838;
+	border-left-width: 20px;
+	padding: 1rem;
+}
+
+.caution-label {
+	text-transform: uppercase;
+}
+
 .figure {
 	width: 100%;
 }

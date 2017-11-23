@@ -3,7 +3,7 @@ title: "About Factual Audio"
 date: "2017-11-21T21:00:00+01:00"
 ---
 
-Factual Audio is dedicated to delivering objective, trustworthy, reliable, evidence-backed information about audio, in particular audio playback in the home and on the move. This includes for example “Hi-Fi” systems, “home cinema” systems, and headphones. The main goal of this website is to educate the general public about audio matters through critical thinking and a sound, rational, scientific approach to assessing audio claims and products.
+Factual Audio is dedicated to delivering objective, trustworthy, reliable, evidence-backed information about audio, in particular audio playback at home and on the move. This includes for example “Hi-Fi” systems, “home cinema” systems, and headphones. The main goal of this website is to educate the general public about audio matters through critical thinking and a sound, rational, scientific approach to assessing audio claims and products.
 
 Factual Audio is a completely independent entity with a strong focus on integrity, transparency and full disclosure. It does not have a commercial or monetary purpose, is not affiliated with any company or organization, does not run ads, and does not accept paid promotion of any kind.
 

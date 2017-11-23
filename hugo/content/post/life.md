@@ -1,5 +1,5 @@
 ---
-title: "Life of an audio signal"
+title: "From bytes to your eardrum"
 date: "2017-11-21T21:02:00+01:00"
 ---
 

@@ -37,7 +37,8 @@ git commit \
 	--message "Hugo version: $HUGO_VERSION" \
 	--message "Octave version: $OCTAVE_VERSION"
 
-git show || true
+git show --patch --stat --find-renames --find-copies --find-copies-harder || true
+echo "For further inspection, go to $WORK_DIR" >&2
 echo -n "Confirm push? (y) " >&2
 read -r ANSWER
 [[ "$ANSWER" = 'y' ]] || exit 1

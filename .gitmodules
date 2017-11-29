@@ -1,6 +1,6 @@
 [submodule "hugo/themes/ghostwriter"]
 	path = hugo/themes/ghostwriter
-	url = https://github.com/dechamps/ghostwriter
+	url = https://github.com/factualaudio/ghostwriter.git
 [submodule "hugo/static/bigfoot"]
 	path = hugo/static/bigfoot
 	url = https://github.com/lemonmade/bigfoot.git

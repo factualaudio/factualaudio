@@ -23,8 +23,7 @@ read -r OCTAVE_VERSION < <(octave --version)
 WORK_DIR="$(mktemp --directory --suffix=.factualaudio-publish)"
 git init "$WORK_DIR"
 
-./generate-plots
-hugo --source hugo --destination "$WORK_DIR" "$@"
+./generate-site "$WORK_DIR" "$@"
 
 cd "$WORK_DIR"
 git add .

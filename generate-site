@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Generates the plots, the site and then postprocesses the site for production.
+# All other options are passed to hugo.
+
+set -e
+set -o pipefail
+shopt -s nullglob
+shopt -s dotglob
+shopt -s globstar
+
+DESTINATION_DIR="$1"
+shift
+
+./generate-plots
+hugo --source hugo --destination "$DESTINATION_DIR/raw" "$@"
+cp -pr "$DESTINATION_DIR"/raw "$DESTINATION_DIR"/cooked
+
+for HTML_FILE in "$DESTINATION_DIR"/cooked/**/*.html
+do
+	echo "Processing $HTML_FILE" >&2
+
+	# We stop tidy from dropping empty elements because that results in
+	# FontAwesome <i> tags being removed.
+	#
+	# TODO: fix Tidy warnings instead of ignoring the return code.
+	tidy --drop-empty-elements false -indent -wrap 0 -quiet -modify "$HTML_FILE" || true
+
+	echo >&2
+done
+
+mv "$DESTINATION_DIR"/cooked/* "$DESTINATION_DIR"/
+rmdir "$DESTINATION_DIR"/cooked
+

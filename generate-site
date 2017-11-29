@@ -25,7 +25,7 @@ do
 
 	# We stop tidy from dropping empty elements because that results in
 	# FontAwesome <i> tags being removed.
-	tidy --drop-empty-elements false -indent -wrap 0 -quiet -modify "$HTML_FILE"
+	tidy --drop-empty-elements false -indent -wrap 0 -quiet -modify -asxml "$HTML_FILE"
 
 	echo >&2
 done

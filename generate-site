@@ -18,6 +18,9 @@ cp -pr "$DESTINATION_DIR"/raw "$DESTINATION_DIR"/cooked
 
 for HTML_FILE in "$DESTINATION_DIR"/cooked/**/*.html
 do
+	# Don't process redirection pages.
+	[[ "$(grep --count --fixed-strings '<meta http-equiv="refresh"' -- "$HTML_FILE")" -eq 1 ]] && continue
+
 	echo "Processing $HTML_FILE" >&2
 
 	# We stop tidy from dropping empty elements because that results in

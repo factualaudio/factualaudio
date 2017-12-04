@@ -17,47 +17,7 @@ shift
 ./generate-plots
 hugo --source hugo --destination "$DESTINATION_DIR/raw" --baseURL "$BASEURL" "$@"
 cp -pr "$DESTINATION_DIR"/raw "$DESTINATION_DIR"/cooked
-
-ASSET_CONCATENATION_MANIFEST="$DESTINATION_DIR/cooked/ASSET-CONCATENATION-MANIFEST"
-
-HTML_FILES=()
-for HTML_FILE in "$DESTINATION_DIR"/cooked/**/*.html
-do
-	# Don't process redirect pages.
-	[[ "$(grep --count --fixed-strings '<meta http-equiv="refresh"' -- "$HTML_FILE")" -eq 1 ]] && continue
-	HTML_FILES+=("$HTML_FILE")
-done
-
-tidyhtml() {
-	# We stop tidy from dropping empty elements because that results in
-	# FontAwesome <i> tags being removed.
-
-	tidy --drop-empty-elements false -numeric -indent -wrap 0 -quiet "$@"
-}
-
-for HTML_FILE in "${HTML_FILES[@]}"
-do
-	echo "Sanitizing $HTML_FILE" >&2
-	tidyhtml -asxml -modify "$HTML_FILE"
-done
-
-echo 'Concatenating assets' >&2
-xsltproc --output "$ASSET_CONCATENATION_MANIFEST" generate-concatenate-manifest.xsl "$DESTINATION_DIR"/cooked/index.html
-./concatenate-assets "$DESTINATION_DIR/cooked" "$BASEURL" < "$ASSET_CONCATENATION_MANIFEST"
-
-for HTML_FILE in "${HTML_FILES[@]}"
-do
-	echo "Using concatenated assets for $HTML_FILE" >&2
-
-	# Double-check that every page has the same concatenated assets as /index.html, to prevent potential inconsistencies.
-	xsltproc generate-concatenate-manifest.xsl "$HTML_FILE" | cmp "$ASSET_CONCATENATION_MANIFEST"
-
-	xsltproc replace-concatenated-assets.xsl "$HTML_FILE" |
-	sed '2 i <!DOCTYPE html>' |
-	tidyhtml -ashtml --doctype html5 -output "$HTML_FILE.final"
-	mv "$HTML_FILE.final" "$HTML_FILE"
-done
-
+./postprocess-site "$DESTINATION_DIR/cooked" "$BASEURL"
 mv "$DESTINATION_DIR"/cooked/* "$DESTINATION_DIR"/
 rmdir "$DESTINATION_DIR"/cooked
 

@@ -11,18 +11,7 @@ PLOTPREFIX="../hugo/static/plots/$PLOTNAME"
 
 for PLOTTYPE in svg png
 do
-	#
-	# Sadly, Octave needs an X server to generate plots, even when outputting to a file.
-	# We use xvfb as a dummy X server (with an hilarious 2x2 resolution) to keep
-	# Octave happy.
-	#
-	# A cleaner alternative would be to use the gnuplot graphics toolkit (instead of
-	# OpenGL), but that toolkit comes with its own set of annoying bugs:
-	#   https://savannah.gnu.org/bugs/?52184
-	#   https://savannah.gnu.org/bugs/?52186
-	#
 	PLOTNAME="$PLOTNAME" PLOTPATH="$PLOTPREFIX.$PLOTTYPE.raw" PLOTTYPE="$PLOTTYPE" \
-		xvfb-run --auto-servernum --server-args="-screen 0 2x2x24" \
 		octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();'
 done
 

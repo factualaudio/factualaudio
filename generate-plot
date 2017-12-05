@@ -7,14 +7,9 @@ set -e
 cd m
 
 PLOTNAME="$1"
-PLOTPREFIX="../hugo/static/plots/$PLOTNAME"
+PLOTBASENAME="../hugo/static/plots/$PLOTNAME"
 
-for PLOTTYPE in svg png
-do
-	PLOTNAME="$PLOTNAME" PLOTPATH="$PLOTPREFIX.$PLOTTYPE.raw" PLOTTYPE="$PLOTTYPE" \
-		octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();'
-done
+PLOTNAME="$PLOTNAME" PLOTBASENAME="$PLOTBASENAME" \
+	octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();'
 
-sed --file=../plot_svg.sed "$PLOTPREFIX.svg.raw" > "$PLOTPREFIX.svg"
-rm "$PLOTPREFIX.svg.raw"
-mv "$PLOTPREFIX.png.raw" "$PLOTPREFIX.png"
+sed --in-place --file=../plot_svg.sed "$PLOTBASENAME.svg"

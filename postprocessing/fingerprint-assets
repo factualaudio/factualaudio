@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Searches for assets (e.g. CSS, JS) in the given directory, fingerprints them,
+# renames them, and outputs a rename manifest using the provided base URL. The
+# output is designed to be fed to replace-links.xsl as the manifest parameter.
+
+set -e
+set -o pipefail
+shopt -s nullglob
+shopt -s dotglob
+shopt -s globstar
+
+[[ "$#" -eq 2 ]]
+
+SITE_DIR="$1"
+BASEURL="$2"
+
+echo '<?xml version="1.0" encoding="UTF-8" ?>'
+echo '<renames>'
+
+sha256sum "$SITE_DIR"/**/*.{css,js} |
+while read -r ASSET_FINGERPRINT ASSET_OLDFILE
+do
+	ASSET_FINGERPRINT="${ASSET_FINGERPRINT:0:7}"
+	ASSET_BASE="${ASSET_OLDFILE%.*}"
+	ASSET_BASEPATH="${ASSET_BASE#"$SITE_DIR/"}"
+	ASSET_BASEURL="$BASEURL$ASSET_BASEPATH"
+	ASSET_OLDEXT="${ASSET_OLDFILE##*.}"
+	ASSET_NEWEXT="fingerprint-$ASSET_FINGERPRINT.$ASSET_OLDEXT"
+
+	echo "$ASSET_BASEPATH.$ASSET_NEWEXT" >&2 
+	mv --no-clobber --no-target-directory "$ASSET_BASE.$ASSET_OLDEXT" "$ASSET_BASE.$ASSET_NEWEXT"
+
+	echo '  <rename>'
+	echo "    <from><![CDATA[$ASSET_BASEURL.$ASSET_OLDEXT]]></from>"
+	echo "    <to><![CDATA[$ASSET_BASEURL.$ASSET_NEWEXT]]></to>"
+	echo '  </rename>'
+done
+
+echo '</renames>'

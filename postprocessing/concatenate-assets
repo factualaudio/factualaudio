@@ -30,4 +30,5 @@ do
 	echo
 
 	cat "${INPUTS[@]}" > "$BASEDIR/$OUTPUT_PATH"
+	rm "${INPUTS[@]}"
 done

@@ -17,6 +17,7 @@ shift
 ./generate-plots
 hugo --source hugo --destination "$DESTINATION_DIR/raw" --baseURL "$BASEURL" "$@"
 cp -pr "$DESTINATION_DIR"/raw "$DESTINATION_DIR"/cooked
+cd postprocessing
 ./postprocess-site "$DESTINATION_DIR/cooked" "$BASEURL"
 mv "$DESTINATION_DIR"/cooked/* "$DESTINATION_DIR"/
 rmdir "$DESTINATION_DIR"/cooked

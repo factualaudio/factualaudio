@@ -54,6 +54,9 @@ do
 	mv "$JS_FILE.optimized" "$JS_FILE"
 done
 
+echo "Optimizing SVG" >&2
+svgo --disable=removeViewBox --enable=removeDimensions "$SITE_DIR"/**/*.svg
+
 echo 'Fingerprinting asssets' >&2
 FINGERPRINT_RENAME_MANIFEST="$SITE_DIR/FINGERPRINT-RENAME-MANIFEST.xml"
 ./fingerprint-assets "$SITE_DIR" "$BASEURL" > "$FINGERPRINT_RENAME_MANIFEST"

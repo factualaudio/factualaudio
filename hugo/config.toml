@@ -20,5 +20,5 @@ description = "The knowledge base for home audio enthusiasts"
 facebook = "https://www.facebook.com/FactualAudio/"
 twitter = "https://twitter.com/FactualAudio"
 shareGooglePlus = false
-jqueryURL = "https://code.jquery.com/jquery-3.2.1.js"
+jqueryURL = "https://code.jquery.com/jquery-3.2.1.slim.js"
 bigfootURL = "https://cdn.rawgit.com/lemonmade/bigfoot/2.1.4"

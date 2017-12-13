@@ -40,6 +40,13 @@ ASSET_CONCATENATION_MANIFEST="$SITE_DIR/ASSET-CONCATENATION-MANIFEST"
 xsltproc --output "$ASSET_CONCATENATION_MANIFEST" generate-concatenate-manifest.xsl "$SITE_DIR"/index.html
 ./concatenate-assets "$SITE_DIR" "$BASEURL" < "$ASSET_CONCATENATION_MANIFEST"
 
+for CSS_FILE in "$SITE_DIR"/**/*.css
+do
+	echo "Optimizing $CSS_FILE" >&2
+	csso "$CSS_FILE" "$CSS_FILE.optimized" --comments none
+	mv "$CSS_FILE.optimized" "$CSS_FILE"
+done
+
 for JS_FILE in "$SITE_DIR"/**/*.js
 do
 	echo "Optimizing $JS_FILE" >&2

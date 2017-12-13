@@ -26,7 +26,7 @@ tidyhtml() {
 	# We stop tidy from dropping empty elements because that results in
 	# FontAwesome <i> tags being removed.
 
-	tidy --drop-empty-elements false -numeric -indent -wrap 0 -quiet "$@"
+	tidy --drop-empty-elements false -numeric -wrap 0 -quiet "$@"
 }
 
 for HTML_FILE in "${HTML_FILES[@]}"

@@ -57,6 +57,14 @@ done
 echo "Optimizing SVG" >&2
 svgo --disable=removeViewBox --enable=removeDimensions "$SITE_DIR"/**/*.svg
 
+echo "Optimizing PNG" >&2
+for PNG_FILE in "$SITE_DIR"/**/*.png
+do
+	echo "Optimizing $PNG_FILE" >&2
+	pngcrush -q -c 2 -rem alla -rem tRNS "$PNG_FILE" "$PNG_FILE.optimized"
+	mv "$PNG_FILE.optimized" "$PNG_FILE"
+done
+
 echo 'Fingerprinting asssets' >&2
 FINGERPRINT_RENAME_MANIFEST="$SITE_DIR/FINGERPRINT-RENAME-MANIFEST.xml"
 ./fingerprint-assets "$SITE_DIR" "$BASEURL" > "$FINGERPRINT_RENAME_MANIFEST"

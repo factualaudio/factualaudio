@@ -14,13 +14,12 @@ shopt -s globstar
 SITE_DIR="$1"
 BASEURL="$2"
 
-HTML_FILES=()
-for HTML_FILE in "$SITE_DIR"/**/*.html
-do
-	# Don't process redirect pages.
-	[[ "$(grep --count --fixed-strings '<meta http-equiv="refresh"' -- "$HTML_FILE")" -eq 1 ]] && continue
-	HTML_FILES+=("$HTML_FILE")
-done
+TMP_DIR=""
+cleanup() {
+        [[ -n "$TMP_DIR" ]] && rm -rf "$TMP_DIR"
+}
+trap cleanup EXIT
+TMP_DIR="$(mktemp --directory --suffix=.factualaudio-postprocess-site)"
 
 tidyhtml() {
 	# We stop tidy from dropping empty elements because that results in
@@ -29,11 +28,35 @@ tidyhtml() {
 	tidy --drop-empty-elements false -numeric -wrap 0 -quiet "$@"
 }
 
-for HTML_FILE in "${HTML_FILES[@]}"
+HTML_PAGE_FILES=()
+for HTML_FILE in "$SITE_DIR"/**/*.html
 do
+	# Don't process redirect pages.
+	[[ "$(grep --count --fixed-strings '<meta http-equiv="refresh"' -- "$HTML_FILE")" -eq 1 ]] && continue
 	echo "Sanitizing $HTML_FILE" >&2
 	tidyhtml -asxml -modify "$HTML_FILE"
+	HTML_PAGE_FILES+=("$HTML_FILE")
 done
+
+mkdir "$TMP_DIR"/rss
+./extract-rss-descriptions "$SITE_DIR"/index.xml "$TMP_DIR"/rss
+HTML_RSS_FILES=()
+for HTML_FILE in "$TMP_DIR"/rss/*.html
+do
+	echo "Sanitizing RSS item $HTML_FILE" >&2
+	{
+		# Prevent HTML Tidy warnings about missing boilerplate.
+		# The meta tag is there to trick HTML Tidy into recognizing the document as HTML5
+		# (otherwise it thinks it's XHTML 1.0 for some reason)
+		echo '<!DOCTYPE html>'
+		echo '<html><head><title></title><meta charset="utf-8" /></head><body>'
+		cat "$HTML_FILE"
+		echo '</body></html>'
+	} | tidyhtml -asxml > "$HTML_FILE.tidy"
+	mv "$HTML_FILE.tidy" "$HTML_FILE"
+	HTML_RSS_FILES+=("$HTML_FILE")
+done
+HTML_FILES=("${HTML_PAGE_FILES[@]}" "${HTML_RSS_FILES[@]}")
 
 echo 'Concatenating assets' >&2
 ASSET_CONCATENATION_MANIFEST="$SITE_DIR/ASSET-CONCATENATION-MANIFEST"
@@ -69,17 +92,44 @@ echo 'Fingerprinting asssets' >&2
 FINGERPRINT_RENAME_MANIFEST="$SITE_DIR/FINGERPRINT-RENAME-MANIFEST.xml"
 ./fingerprint-assets "$SITE_DIR" "$BASEURL" > "$FINGERPRINT_RENAME_MANIFEST"
 
-for HTML_FILE in "${HTML_FILES[@]}"
+for HTML_FILE in "${HTML_PAGE_FILES[@]}"
 do
 	echo "Replacing assets for $HTML_FILE" >&2
 
 	# Double-check that every page has the same concatenated assets as /index.html, to prevent potential inconsistencies.
 	xsltproc generate-concatenate-manifest.xsl "$HTML_FILE" | cmp "$ASSET_CONCATENATION_MANIFEST"
 
-	xsltproc replace-concatenated-assets.xsl "$HTML_FILE" |
-	xsltproc --stringparam manifest "$FINGERPRINT_RENAME_MANIFEST" replace-links.xsl - |
-	sed '2 i <!DOCTYPE html>' |
-	tidyhtml -ashtml --doctype html5 -output "$HTML_FILE.final"
-	mv "$HTML_FILE.final" "$HTML_FILE"
+	xsltproc --output "$HTML_FILE.concatenated" replace-concatenated-assets.xsl "$HTML_FILE"
+	mv "$HTML_FILE.concatenated" "$HTML_FILE"
 done
 
+for HTML_FILE in "${HTML_FILES[@]}"
+do
+	echo "Replacing links in $HTML_FILE" >&2
+
+	xsltproc --stringparam manifest "$FINGERPRINT_RENAME_MANIFEST" replace-links.xsl "$HTML_FILE" |
+	sed '2 i <!DOCTYPE html>' > "$HTML_FILE.links"
+	mv "$HTML_FILE.links" "$HTML_FILE"
+done
+
+for HTML_FILE in "${HTML_PAGE_FILES[@]}"
+do
+	echo "Generating $HTML_FILE" >&2
+	tidyhtml -ashtml --doctype html5 -modify "$HTML_FILE"
+done
+
+for HTML_FILE in "${HTML_RSS_FILES[@]}"
+do
+	echo "Extracing body from $HTML_FILE" >&2
+	tidyhtml --show-body-only yes -ashtml --doctype html5 "$HTML_FILE" |
+	{
+		echo '<?xml version="1.0" ?>'
+		echo '<htmlbody>'
+		sed 's/&/\&amp;/g; s/</\&lt;/g'
+		echo '</htmlbody>'
+	} > "$HTML_FILE.xml"
+done
+
+echo "Recombining HTML descriptions into RSS feed" >&2
+xsltproc --stringparam descriptions-dir "$TMP_DIR"/rss --output "$SITE_DIR"/index.xml.final replace-rss-descriptions.xsl "$SITE_DIR"/index.xml
+mv "$SITE_DIR"/index.xml.final "$SITE_DIR"/index.xml

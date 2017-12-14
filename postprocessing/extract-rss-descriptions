@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Extracts the descriptions of the items in the specified RSS file into separate HTML files in the provided directory.
+# This makes it possible to process the HTML contents of the RSS feed just like any other HTML document.
+
+set -e
+set -o noclobber
+set -o pipefail
+shopt -s nullglob
+
+[[ "$#" -eq 2 ]]
+
+RSS_FILE="$1"
+DESTINATION_DIR="$2"
+
+declare -i INDEX=1
+while :
+do
+	HTML_FILE="$DESTINATION_DIR/$INDEX.html"
+	xsltproc --stringparam index "$INDEX" --output "$HTML_FILE" extract-rss-description.xsl "$RSS_FILE"
+	[[ -e "$HTML_FILE" ]] || break
+	echo "Extracted RSS item #$INDEX" >&2
+	INDEX+=1
+done

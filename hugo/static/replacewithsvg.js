@@ -7,10 +7,9 @@
 // supported). Meanwhile, full-featured browsers will run this code, so
 // they will display the visually superior SVG images.
 $(function() {
-	$("img.replacewithsvg").each(function() {
-		var prefix = $(this).attr("src").split(".").slice(0, -1).join(".");
+	$("img[data-svg-alternative]").each(function() {
 		// We use <object>, not <img>, for SVG because fonts
 		// don't work with <img> for some reason.
-		$(this).replaceWith($("<object/>", {"class": "fitvidsignore " + $(this).attr("class"),}).attr("data", prefix + ".svg"));
+		$(this).replaceWith($("<object/>", {"class": "fitvidsignore " + $(this).attr("class"),}).attr("data", $(this).data("svg-alternative")));
 	});
 });

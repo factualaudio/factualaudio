@@ -26,7 +26,7 @@
 		<xsl:apply-templates />
 	</xsl:template>
 
-	<xsl:template match="@href | @src">
+	<xsl:template match="@href | @src | @data-svg-alternative">
 		<xsl:attribute name="{name()}">
 			<xsl:variable name="old-asset-uri" select="." />
 			<xsl:for-each select="$manifest-document">

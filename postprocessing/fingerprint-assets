@@ -18,7 +18,7 @@ BASEURL="$2"
 echo '<?xml version="1.0" encoding="UTF-8" ?>'
 echo '<renames>'
 
-sha256sum "$SITE_DIR"/**/*.{css,js} |
+sha256sum "$SITE_DIR"/**/*.{css,js,svg,png,jpg} |
 while read -r ASSET_FINGERPRINT ASSET_OLDFILE
 do
 	ASSET_FINGERPRINT="${ASSET_FINGERPRINT:0:7}"

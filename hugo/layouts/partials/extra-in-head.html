@@ -6,11 +6,4 @@
 <script defer src="{{ .Site.BaseURL }}inline_footnotes.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
 <script defer src="{{ .Site.BaseURL }}bigfoot.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
 <script defer src="{{ .Site.BaseURL }}replacewithsvg.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109981744-1"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-109981744-1');
-</script>
+<script defer src="{{ .Site.BaseURL }}google_analytics.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>

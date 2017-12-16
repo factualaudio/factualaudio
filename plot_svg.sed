@@ -1,5 +1,7 @@
 # Ensure the font can be found
-2 i <?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" ?>
+# Note: it's best to ensure this is the exact same URL as the one in the theme,
+# such that only one HTTP request needs to be made.
+2 i <?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" ?>
 
 # Sometimes, Octave generates a black background instead of a white background,
 # causing weird borders to appear when the SVG is rendered. This seems to happen

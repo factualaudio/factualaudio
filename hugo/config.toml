@@ -4,8 +4,6 @@ languageCode = "en"
 theme = "ghostwriter"
 copyright = "Etienne Dechamps"
 
-disqusShortname = "factualaudio"
-
 [Author]
 name = "Etienne Dechamps"
 email = "etienne@edechamps.fr"

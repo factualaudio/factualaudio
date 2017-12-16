@@ -88,6 +88,10 @@ do
 	mv "$PNG_FILE.optimized" "$PNG_FILE"
 done
 
+echo "Generating image manifest" >&2
+IMAGE_MANIFEST="$SITE_DIR/IMAGE-MANIFEST.xml"
+./generate-image-manifest "$SITE_DIR" "$BASEURL" > "$IMAGE_MANIFEST"
+
 echo 'Fingerprinting asssets' >&2
 FINGERPRINT_RENAME_MANIFEST="$SITE_DIR/FINGERPRINT-RENAME-MANIFEST.xml"
 ./fingerprint-assets "$SITE_DIR" "$BASEURL" > "$FINGERPRINT_RENAME_MANIFEST"
@@ -99,7 +103,8 @@ do
 	# Double-check that every page has the same concatenated assets as /index.html, to prevent potential inconsistencies.
 	xsltproc generate-concatenate-manifest.xsl "$HTML_FILE" | cmp "$ASSET_CONCATENATION_MANIFEST"
 
-	xsltproc --output "$HTML_FILE.concatenated" replace-concatenated-assets.xsl "$HTML_FILE"
+	xsltproc --stringparam manifest "$IMAGE_MANIFEST" process-intrinsic-placeholders.xsl "$HTML_FILE" |
+	xsltproc --output "$HTML_FILE.concatenated" replace-concatenated-assets.xsl -
 	mv "$HTML_FILE.concatenated" "$HTML_FILE"
 done
 

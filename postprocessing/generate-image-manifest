@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Searches for images (PNG, JPG) in the given directory, get their sizes, and
+# outputs an XML manifest with the results. The output is designed to be fed to
+# process-intrinsic-placeholders.xsl as the manifest parameter.
+
+set -e
+set -o pipefail
+shopt -s nullglob
+shopt -s dotglob
+shopt -s globstar
+
+[[ "$#" -eq 2 ]]
+
+SITE_DIR="$1"
+BASEURL="$2"
+
+echo '<?xml version="1.0" encoding="UTF-8" ?>'
+echo '<images>'
+
+identify -format '%i %w %h\n' -- "$SITE_DIR"/**/*.{png,jpg,svg} |
+while read -r IMAGE_PATH IMAGE_WIDTH IMAGE_HEIGHT
+do
+	IMAGE_BASEPATH="${IMAGE_PATH#"$SITE_DIR/"}"
+	IMAGE_URL="$BASEURL$IMAGE_BASEPATH"
+
+	echo "$IMAGE_BASEPATH ${IMAGE_WIDTH}x${IMAGE_HEIGHT}" >&2
+
+	echo '  <image>'
+	echo "    <url><![CDATA[$IMAGE_URL]]></url>"
+	echo "    <width><![CDATA[$IMAGE_WIDTH]]></width>"
+	echo "    <height><![CDATA[$IMAGE_HEIGHT]]></height>"
+	echo '  </image>'
+done
+
+echo '</images>'

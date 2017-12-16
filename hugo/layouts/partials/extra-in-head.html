@@ -1,13 +1,11 @@
 <link rel="icon" href="{{ .Site.BaseURL }}icon.png" type="image/png">
 <link rel="stylesheet" href="{{ .Site.Params.bigfootURL }}/dist/bigfoot-default.css" data-concatenate-into="{{ .Site.BaseURL }}combined.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles.css" data-concatenate-into="{{ .Site.BaseURL }}combined.css">
-<script src="{{ .Site.Params.jqueryURL }}" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
-<script src="{{ .Site.Params.bigfootURL }}/dist/bigfoot.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
-<script src="{{ .Site.BaseURL }}replacewithsvg.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
-<script src="{{ .Site.BaseURL }}inline_footnotes.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
-<script>
-	$.bigfoot();
-</script>
+<script defer src="{{ .Site.Params.jqueryURL }}" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
+<script defer src="{{ .Site.Params.bigfootURL }}/dist/bigfoot.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
+<script defer src="{{ .Site.BaseURL }}inline_footnotes.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
+<script defer src="{{ .Site.BaseURL }}bigfoot.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
+<script defer src="{{ .Site.BaseURL }}replacewithsvg.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109981744-1"></script>
 <script>
 	window.dataLayer = window.dataLayer || [];

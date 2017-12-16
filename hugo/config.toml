@@ -4,7 +4,6 @@ languageCode = "en"
 theme = "ghostwriter"
 copyright = "Etienne Dechamps"
 
-googleAnalytics = "UA-109981744-1"
 disqusShortname = "factualaudio"
 
 [Author]

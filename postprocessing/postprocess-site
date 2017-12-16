@@ -118,6 +118,11 @@ do
 	tidyhtml -ashtml --doctype html5 -modify "$HTML_FILE"
 done
 
+# Workaround for https://github.com/htacg/tidy-html5/issues/658
+# Another approach could have been to output XHTML5,
+# but then we would have to deal with https://github.com/htacg/tidy-html5/issues/660
+sed --in-place '1!b; /^<?xml /d' "${HTML_PAGE_FILES[@]}"
+
 for HTML_FILE in "${HTML_RSS_FILES[@]}"
 do
 	echo "Extracing body from $HTML_FILE" >&2

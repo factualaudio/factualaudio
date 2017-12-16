@@ -2,7 +2,7 @@
 $(function() {
 	footnotes = $("<ol/>").appendTo($("<div/>", {"class": "footnotes"}).appendTo($("article")));
 
-	var inline_footnotes = $(".inlineFootnote");
+	var inline_footnotes = $(".inlineFootnoteUnprocessed");
 
 	// We process the footnotes in two passes so that nested footnotes are handled correctly.
 
@@ -14,6 +14,8 @@ $(function() {
 		var bigfootnote = $("<span/>", {"class": $(this).attr("class")}).append(
 			$("<sup/>", {"id": "fnref:" + id}).append(
 				$("<a/>", {"href": "#fn:" + id, rel: "footnote", text: index})));
+		bigfootnote.removeClass('inlineFootnoteUnprocessed');
+		bigfootnote.addClass('inlineFootnote');
 		$(this).after(bigfootnote);
 
 		var item = $("<li/>", {"id": "fn:" + id}).append(

@@ -17,4 +17,4 @@
 	      (Also don't use class name "note", Pocket Article View on Android does something
 	      weird in that case. Don't ask. Oh, and don't use a class name that starts with
 	      "footnote" either, that confuses Bigfoot. Sigh...)
-*/}}<strong class="inlineFootnoteDecoration"> [{{ .Get 0 }}] </strong><span class="inlineFootnote inlineFootnote-{{ .Get 0 }}">{{ .Inner }}</span><strong class="inlineFootnoteDecoration"> [end {{ .Get 0 }}] </strong>
+*/}}<strong class="inlineFootnoteDecoration"> [{{ .Get 0 }}] </strong><span class="inlineFootnote-{{ .Get 0 }} inlineFootnoteUnprocessed">{{ .Inner }}</span><strong class="inlineFootnoteDecoration"> [end {{ .Get 0 }}] </strong>

@@ -52,10 +52,26 @@ ul li {
 	position: relative;
 }
 
+/*
+	Prevent excessive reflow when rendering footnotes
+	by reducing the inline footnote to the size of the
+	button it's going to be replaced with.
+*/
+.inlineFootnoteDecoration {
+	display: none;
+}
+.inlineFootnoteUnprocessed {
+	display: inline-block;
+	width: 36px;
+	height: 26px;
+	font-size: 0;
+	overflow: hidden;
+	background-color: rgb(200, 200, 200);
+}
+
 .inlineFootnote-note .bigfoot-footnote__button {
 	background-color: #f03838;
 }
-
 .inlineFootnote-ref .bigfoot-footnote__button {
 	background-color: rgb(200, 200, 200);
 }

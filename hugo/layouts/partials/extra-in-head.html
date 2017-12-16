@@ -1,6 +1,24 @@
 <link rel="icon" href="{{ .Site.BaseURL }}icon.png" type="image/png">
 <link rel="stylesheet" href="{{ .Site.Params.bigfootURL }}/dist/bigfoot-default.css" data-concatenate-into="{{ .Site.BaseURL }}combined.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles.css" data-concatenate-into="{{ .Site.BaseURL }}combined.css">
+{{/*
+	See the .inlineFootnoteUnprocessed styles in styles.css.
+	If the user doesn't have Javascript enabled, then the footnotes
+	will never be replaced by buttons, and we need to cancel the styles
+	so that the footnotes can be read inline.
+*/}}
+<noscript>
+	<style>
+		.inlineFootnoteDecoration {
+			display: inline;
+		}
+		.inlineFootnoteUnprocessed {
+			display: inline;
+			font-size: inherit;
+			background-color: transparent;
+		}
+	</style>
+</noscript>
 <script defer src="{{ .Site.Params.jqueryURL }}" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
 <script defer src="{{ .Site.Params.bigfootURL }}/dist/bigfoot.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>
 <script defer src="{{ .Site.BaseURL }}inline_footnotes.js" data-concatenate-into="{{ .Site.BaseURL }}combined.js"></script>

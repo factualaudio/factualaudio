@@ -6,6 +6,7 @@
 set -e
 set -o pipefail
 shopt -s nullglob
+shopt -s dotglob
 
 REMOTE="$1"
 shift
@@ -21,26 +22,36 @@ HUGO_VERSION="$(hugo version)"
 read -r OCTAVE_VERSION < <(octave --version)
 
 WORK_DIR="$(mktemp --directory --suffix=.factualaudio-publish)"
-git init "$WORK_DIR"
 
-./generate-site "$WORK_DIR" "$@"
+mkdir "$WORK_DIR/site"
+./generate-site "$WORK_DIR/site" "$@"
 
-cd "$WORK_DIR"
-git add .
+mkdir "$WORK_DIR/git"
+workgit() {
+	git -C "$WORK_DIR/git" "$@"
+}
+workgit init
+workgit remote add origin "$REMOTE"
+workgit pull origin master --depth=1
 
-git remote add origin "$REMOTE"
-git fetch origin master --depth=1
-git reset --soft origin/master
-git commit \
+# For the raw directory (which is only there to make diffs and inspection easier),
+# we replace the entire contents. For everything else however, it is very
+# important to not clean up old files, because that might break content
+# (especially fingerprinted static assets) that is already partially cached
+# elsewhere (HTML pages but also RSS feeds).
+workgit rm -r raw
+cp --preserve --recursive --target-directory="$WORK_DIR/git/" --verbose -- "$WORK_DIR/site"/*
+workgit add .
+
+workgit commit \
 	--message="Publishing from source repository commit $SOURCE_COMMIT" \
 	--message "Hugo version: $HUGO_VERSION" \
 	--message "Octave version: $OCTAVE_VERSION"
 
-git show --patch --stat --find-renames --find-copies --find-copies-harder || true
+workgit show --patch --stat --find-renames --find-copies --find-copies-harder || true
 echo "For further inspection, go to $WORK_DIR" >&2
 echo -n "Confirm push? (y) " >&2
 read -r ANSWER
 [[ "$ANSWER" = 'y' ]] || exit 1
 
-git push origin master
-
+workgit push origin master

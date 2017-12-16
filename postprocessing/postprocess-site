@@ -108,7 +108,7 @@ do
 	echo "Replacing links in $HTML_FILE" >&2
 
 	xsltproc --stringparam manifest "$FINGERPRINT_RENAME_MANIFEST" replace-links.xsl "$HTML_FILE" |
-	sed '2 i <!DOCTYPE html>' > "$HTML_FILE.links"
+	xsltproc --output "$HTML_FILE.links" html5-doctype.xsl -
 	mv "$HTML_FILE.links" "$HTML_FILE"
 done
 

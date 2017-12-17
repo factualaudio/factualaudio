@@ -81,11 +81,11 @@ echo "Optimizing SVG" >&2
 svgo --disable=removeViewBox --enable=removeDimensions "$SITE_DIR"/**/*.svg
 
 echo "Optimizing PNG" >&2
-for PNG_FILE in "$SITE_DIR"/**/*.png
+PNG_FILES=("$SITE_DIR"/**/*.png)
+parallel --will-cite -v --progress --bar --eta --halt now,fail=1 --shuf zopflipng {} {}.zopfli ::: "${PNG_FILES[@]}"
+for PNG_FILE in "${PNG_FILES[@]}"
 do
-	echo "Optimizing $PNG_FILE" >&2
-	pngcrush -q -c 2 -rem alla -rem tRNS "$PNG_FILE" "$PNG_FILE.optimized"
-	mv "$PNG_FILE.optimized" "$PNG_FILE"
+	mv "$PNG_FILE.zopfli" "$PNG_FILE"
 done
 
 echo "Generating image manifest" >&2

@@ -7,8 +7,8 @@ copyright = "Etienne Dechamps"
 [Author]
 name = "Etienne Dechamps"
 email = "etienne@edechamps.fr"
-# TODO: places where this is used (author link) don't expect relative URLs, so this might misbehave depending on baseURL configuration.
-profile = "/page/about/"
+# TODO: ideally this should honor baseURL, but it's not clear how to do that cleanly.
+profile = "https://factualaudio.com/page/about/"
 
 [Params]
 intro = true

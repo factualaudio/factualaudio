@@ -4,7 +4,6 @@ function annotate_amplitude(samples)
 	rms_amplitude = sqrt(meansq(samples));
 
 	horizontal_line(min_amplitude);
-	horizontal_line(0);
 	horizontal_line(max_amplitude);
 	horizontal_line(rms_amplitude);
 

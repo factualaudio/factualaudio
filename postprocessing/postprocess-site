@@ -47,7 +47,7 @@ do
 	{
 		# Prevent HTML Tidy warnings about missing boilerplate.
 		# The meta tag is there to trick HTML Tidy into recognizing the document as HTML5
-		# (otherwise it thinks it's XHTML 1.0 for some reason)
+		# (see https://github.com/htacg/tidy-html5/issues/657)
 		echo '<!DOCTYPE html>'
 		echo '<html><head><title></title><meta charset="utf-8" /></head><body>'
 		cat "$HTML_FILE"

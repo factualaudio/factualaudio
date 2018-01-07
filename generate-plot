@@ -9,7 +9,8 @@ cd m
 PLOTNAME="$1"
 PLOTBASENAME="../hugo/static/plots/$PLOTNAME"
 
+# Errors are ignored because of https://savannah.gnu.org/bugs/?50210
 PLOTNAME="$PLOTNAME" PLOTBASENAME="$PLOTBASENAME" \
-	octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();'
+	octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();' || true
 
 sed --in-place --file=../plot_svg.sed "$PLOTBASENAME.svg"

@@ -7,7 +7,7 @@ As the audio signal makes its way through the different [realms](<{{% ref "life.
 
 In order to build a high quality audio system, it is necessary to keep signal degradation (i.e. unwanted alteration) under control, and this requires a good understanding of what these alterations might be, what causes them, and how to avoid or alleviate them. Ever since the advent of sound reproduction more than a century ago this topic has been the subject of great debate, some thoughtful and innovative, some misguided or downright counter-productive. Hopefully this blog will do more of the former and less of the latter — but for now, this post serves as a brief introduction to the issues at hand.
 
-Signal alterations can be divided into three broad categories: *noise*, *frequency response distortion*, and *non-linear distortion*. {{% footnote note %}}When used by itself without qualification, the term “distortion” can refer to some or all of these categories, depending on context.{{% /footnote %}} Real-world systems exhibit all three kinds in varying amounts. Future posts will dive into these issues in much more detail.
+Signal alterations can be divided into three broad categories: *noise*, *frequency response distortion*, and *non-linear distortion*. {{% footnote note %}}When used by itself without qualification, the term “distortion” can refer to some or all of these categories, depending on context.{{% /footnote %}} Real-world systems exhibit all three kinds in varying amounts. What follows is a brief overview of the issues at hand; future posts will look at each of them more closely.
 
 # Noise
 

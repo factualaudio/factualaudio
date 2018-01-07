@@ -20,7 +20,7 @@ In audio, we care more about *ratios* of quantities (e.g. "2×") than absolute v
 
 In both cases the absolute difference is the same: 0.1 Pa. However, the ratio is very different; in the former case it’s 2×, in the latter case it’s 1.1×. This makes a compelling case for using ratios, not differences, when comparing amplitudes.
 
-There is another advantage to using ratios. Remember that all three quantities (sample value, voltage, and sound pressure) are (hopefully) *proportional* to each other when the audio signal moves from one realm to the next. This means that a given ratio applies in all three domains: twice the sample value is also twice the voltage and twice the sound pressure. This is very convenient because it means that a given ratio (often called [gain][]) has the same meaning regardless of context.
+There is another advantage to using ratios. Remember that all three quantities (sample value, voltage, and sound pressure) are *proportional* to each other when the audio signal moves from one realm to the next. {{% footnote note %}}Assuming ideal conditions, i.e. no [noise or distortion](<{{% ref "distortion.md" %}}>).{{% /footnote %}} This means that a given ratio applies in all three domains: twice the sample value is also twice the voltage and twice the sound pressure. This is very convenient because it means that a given ratio (often called [gain][]) has the same meaning regardless of context.
 
 Now, if only there was a unit that made working with ratios easier…
 

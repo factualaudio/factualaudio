@@ -10,6 +10,14 @@ if [[ "${#PLOTS[@]}" -eq 0 ]]
 then
 	rm -rf hugo/static/plots
 	mkdir -p hugo/static/plots
+
+	for PLOTPATH in python/factualaudio/plots/*.py
+	do
+		PLOTFILE="${PLOTPATH##*/}"
+		PLOTNAME="${PLOTFILE%.py}"
+		PLOTS+=("$PLOTNAME")
+	done
+
 	for PLOTPATH in m/plots/*.m
 	do
 		PLOTFILE="${PLOTPATH##*/}"

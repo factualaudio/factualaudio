@@ -4,13 +4,29 @@
 
 set -e
 
-cd m
-
 PLOTNAME="$1"
+
 PLOTBASENAME="../hugo/static/plots/$PLOTNAME"
 
-# Errors are ignored because of https://savannah.gnu.org/bugs/?50210
-PLOTNAME="$PLOTNAME" PLOTBASENAME="$PLOTBASENAME" \
-	octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();' || true
+# Only use dashes in file names, never underscores. Underscores makes remark
+# complain, as it sees them as emphasis markers.
+# TODO: this is silly, we should really fix remark instead.
+#       https://github.com/remarkjs/remark/issues/253
+PLOTBASENAME="${PLOTBASENAME//_/-}"
 
-sed --in-place --file=../plot_svg.sed "$PLOTBASENAME.svg"
+if [[ -e "python/factualaudio/plots/$PLOTNAME.py" ]]
+then
+	cd python
+
+	python3 -m factualaudio.generate_plot "factualaudio.plots.$PLOTNAME" \
+		--png-output "$PLOTBASENAME.png" --svg-output "$PLOTBASENAME.svg"
+else
+	cd m
+
+	# Errors are ignored because of https://savannah.gnu.org/bugs/?50210
+	PLOTNAME="$PLOTNAME" PLOTBASENAME="$PLOTBASENAME" \
+		octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();' || true
+
+	sed --in-place --file=../plot_svg.sed "$PLOTBASENAME.svg"
+fi
+

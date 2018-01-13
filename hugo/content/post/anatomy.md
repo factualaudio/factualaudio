@@ -11,7 +11,7 @@ An audio signal is an oscillating phenomenon: it is defined by a quantity that a
 
 Out of the infinity of shapes that an audio signal can take, probably the simplest is a *pure tone*, also called a *sine wave* from the name of the [mathematical function][sine] that it describes. Here is an example of a sine wave:
 
-{{% figure "plots/1khz-sine-wave" "1 kHz pure tone waveform" %}}
+{{% figure "plots/sine-wave-1khz" "1 kHz pure tone waveform" %}}
 
 The horizontal axis is time, which is why it is often said that this representation shows the signal in the *[time domain][]* (another term is *[waveform][]*). The above signal oscillates around the central value represented by the horizontal line. According to the horizontal scale, this particular signal repeats once every millisecond: this is its *period*, also known as the *wavelength* or *cycle*. Said differently, the signal repeats one thousand times per second: it has a *[frequency][]* of 1000 [hertz][]. In order to be audible, the frequency of the signal must sit between 20 Hz and 20 kHz: this interval is known as the *[audible range][]* of the human hearing system.
 

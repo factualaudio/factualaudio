@@ -1,3 +1,4 @@
 /hugo/content/post/*.tidy
 /hugo/static/plots/
 /hugo/public/
+__pycache__/

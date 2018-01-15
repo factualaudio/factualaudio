@@ -31,7 +31,7 @@ As the above image shows, a musical signal is way more complex than a pure tone.
 
 In order to make sense of such complex signals, we need a better way to look at the data. Fortunately, the above signal can be decomposed into a number of pure tones of various frequencies and amplitudes, thanks to the *[superposition principle][]*. The mathematical tool used to do the decomposition is called the *[Fourier transform][fourier]*. For example, if we were to apply the Fourier transform to our first pure tone example, the result could be represented as follows:
 
-{{% figure "plots/1khz-sine-spectrum" "1 kHz pure tone spectrum" %}}
+{{% figure "plots/sine-spectrum-1khz" "1 kHz pure tone spectrum" %}}
 
 The vertical axis is still amplitude, but the horizontal axis has changed — it now represents frequency. This representation shows the signal in the *[frequency domain][]*, or, in other words, it shows the *[spectral density][]* (often simply called *spectrum*) of the signal.
 

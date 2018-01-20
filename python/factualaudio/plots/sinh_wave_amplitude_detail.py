@@ -1,5 +1,4 @@
-import factualaudio.plots.sine_wave_amplitude_detail
-import numpy as np
+import factualaudio.plots.sinh_wave_amplitude
 
 def populate_figure(figure):
-    return factualaudio.plots.sine_wave_amplitude_detail.populate_figure(figure, lambda x: np.sinh(x*10) / np.sinh(10))
+    return factualaudio.plots.sinh_wave_amplitude.populate_figure(figure, include_detail=True)

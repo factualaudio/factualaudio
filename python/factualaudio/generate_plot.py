@@ -17,7 +17,7 @@ args = argument_parser.parse_args()
 # conflicts, in case anyone ever feels like doing that.
 rcParams['svg.hashsalt'] = 'factualaudio.com/' + args.plot_module
 
-figure = Figure()
+figure = Figure(tight_layout=True)
 
 plot_module = importlib.import_module(args.plot_module)
 plot_module.populate_figure(figure)

@@ -10,4 +10,6 @@ def populate_figure(figure):
     rms_amplitude_spectrum(axes, wave, Fs=sample_rate)
     format_spectrum(figure)
     axes.set_ylim(-20, 0)
+    axes.set_yticks([])
+    axes.set_ylabel("Amplitude")
 

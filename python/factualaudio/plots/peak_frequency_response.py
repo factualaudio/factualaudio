@@ -7,3 +7,4 @@ def populate_figure(figure):
     transfer_function_gain(axes, peak(2, 2), corner_frequency=1000)
     format_spectrum(figure)
     axes.set_ylim(-10, 10)
+    axes.set_ylabel('Gain (dB)')

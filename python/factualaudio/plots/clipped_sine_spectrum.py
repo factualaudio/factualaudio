@@ -10,4 +10,7 @@ def populate_figure(figure):
     rms_amplitude_spectrum(axes, wave, Fs=sample_rate)
     format_spectrum(figure)
     axes.set_ylim(-60, 0)
-    add_ellipse_annotation(figure, xy=(0.8, 0.3), width=0.4, height=0.7, transform=axes.transAxes)
+    axes.set_xticks(np.array([1, 3, 5, 7, 9])*1000)
+    axes.set_xticklabels(['1k', '3k', '5k', '7k', '9k'])
+    axes.set_xticks([], minor=True)
+    add_ellipse_annotation(figure, xy=(0.8, 0.3), width=0.4, height=0.8, transform=axes.transAxes)

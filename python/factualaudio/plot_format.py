@@ -1,16 +1,23 @@
 import numpy as np
 from matplotlib.patches import Ellipse
+from matplotlib.ticker import ScalarFormatter
 
 def format_waveform_plot(figure):
     figure.set_figheight(2)
     axes = figure.axes[0]
     axes.autoscale(axis='x', tight=True)
     axes.axhline(color='gray', zorder=0)
+    axes.set_xlabel('Time (milliseconds)')
+    axes.set_ylabel('Amplitude')
 
 def format_spectrum(figure):
     axes = figure.axes[0]
     axes.set_xscale("log")
     axes.set_xlim(20, 20000)
+    axes.set_xlabel('Frequency (Hz)')
+    axes.set_ylabel('Amplitude (dB)')
+    axes.set_xticks([20, 100, 1000, 10000, 20000])
+    axes.get_xaxis().set_major_formatter(ScalarFormatter())
 
 # Adds an annotation in the form of an ellipse.
 # Note that you probably want to use either transform=axes.transData or

@@ -10,3 +10,6 @@ def populate_figure(figure, wavefilter=lambda x: x):
     waveform(axes, wave, sample_rate)
     format_waveform_plot(figure)
     annotate_amplitude(axes, wave)
+    axes.set_xticks([])
+    axes.set_xlabel('')
+    axes.set_ylabel('')

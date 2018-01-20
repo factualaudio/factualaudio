@@ -7,7 +7,7 @@ def populate_figure(figure):
     wave, sample_rate = sine_wave(frequency=1000)
 
     axes = figure.add_subplot(1, 1, 1)
-    rms_amplitude_spectrum(axes, wave, Fs=sample_rate, window=np.ones(wave.size), scale='dB')
+    rms_amplitude_spectrum(axes, wave, Fs=sample_rate)
     format_spectrum(figure)
     axes.set_ylim(-20, 0)
 

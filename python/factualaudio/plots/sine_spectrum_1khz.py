@@ -8,8 +8,6 @@ def populate_figure(figure):
     samples_per_period = 100
 
     wave = sine_wave(num_periods=3, samples_per_period=samples_per_period)
-    # Add some noise to avoid numerical issues when converting to dB
-    wave += noise(wave.size) * 1e-15
 
     axes = figure.add_subplot(1, 1, 1)
     rms_amplitude_spectrum(axes, wave, Fs=samples_per_period * 1000, window=np.ones(wave.size), scale='dB')

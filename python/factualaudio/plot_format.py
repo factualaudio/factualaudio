@@ -1,4 +1,5 @@
 import numpy as np
+from matplotlib.patches import Ellipse
 
 def format_waveform_plot(figure):
     figure.set_figheight(2)
@@ -10,6 +11,17 @@ def format_spectrum(figure):
     axes = figure.axes[0]
     axes.set_xscale("log")
     axes.set_xlim(20, 20000)
+
+# Adds an annotation in the form of an ellipse.
+# Note that you probably want to use either transform=axes.transData or
+# transform=transAxes depending on your use case.
+def add_ellipse_annotation(figure, *args, **kwargs):
+    kwargs.setdefault("edgecolor", "red")
+    kwargs.setdefault("fill", False)
+    kwargs.setdefault("linewidth", 2)
+    # We add to the figure, not the axes, so that the patch is draw on
+    # top of everything else and is not constrained by the axes box.
+    return figure.patches.append(Ellipse(*args, **kwargs))
 
 def annotate_amplitude(axes, wave):
     wavemin = np.amin(wave)

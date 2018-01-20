@@ -11,7 +11,7 @@ An audio signal is an oscillating phenomenon: it is defined by a quantity that a
 
 Out of the infinity of shapes that an audio signal can take, probably the simplest is a *pure tone*, also called a *sine wave* from the name of the [mathematical function][sine] that it describes. Here is an example of a sine wave:
 
-{{% figure "plots/1khz-sine-wave" "1 kHz pure tone waveform" %}}
+{{% figure "plots/sine-wave-1khz" "1 kHz pure tone waveform" %}}
 
 The horizontal axis is time, which is why it is often said that this representation shows the signal in the *[time domain][]* (another term is *[waveform][]*). The above signal oscillates around the central value represented by the horizontal line. According to the horizontal scale, this particular signal repeats once every millisecond: this is its *period*, also known as the *wavelength* or *cycle*. Said differently, the signal repeats one thousand times per second: it has a *[frequency][]* of 1000 [hertz][]. In order to be audible, the frequency of the signal must sit between 20 Hz and 20 kHz: this interval is known as the *[audible range][]* of the human hearing system.
 
@@ -31,7 +31,7 @@ As the above image shows, a musical signal is way more complex than a pure tone.
 
 In order to make sense of such complex signals, we need a better way to look at the data. Fortunately, the above signal can be decomposed into a number of pure tones of various frequencies and amplitudes, thanks to the *[superposition principle][]*. The mathematical tool used to do the decomposition is called the *[Fourier transform][fourier]*. For example, if we were to apply the Fourier transform to our first pure tone example, the result could be represented as follows:
 
-{{% figure "plots/1khz-sine-spectrum" "1 kHz pure tone spectrum" %}}
+{{% figure "plots/sine-spectrum-1khz" "1 kHz pure tone spectrum" %}}
 
 The vertical axis is still amplitude, but the horizontal axis has changed — it now represents frequency. This representation shows the signal in the *[frequency domain][]*, or, in other words, it shows the *[spectral density][]* (often simply called *spectrum*) of the signal.
 

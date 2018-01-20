@@ -1,0 +1,9 @@
+# To make the font work, install Open Sans (Debian package: fonts-open-sans),
+# then run:
+#   from matplotlib import font_manager
+#   font_manager._rebuild()
+font.sans-serif: Open Sans
+
+figure.dpi: 200
+figure.facecolor: fefefe
+svg.fonttype: none

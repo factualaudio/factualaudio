@@ -19,7 +19,7 @@ trap cleanup EXIT
 
 SOURCE_COMMIT="$(git rev-parse --verify HEAD)"
 HUGO_VERSION="$(hugo version)"
-read -r OCTAVE_VERSION < <(octave --version)
+MATPLOTLIB_VERSION="$(python3 -c 'import matplotlib; print(matplotlib.__version__)')"
 
 WORK_DIR="$(mktemp --directory --suffix=.factualaudio-publish)"
 
@@ -46,7 +46,7 @@ workgit add .
 workgit commit \
 	--message="Publishing from source repository commit $SOURCE_COMMIT" \
 	--message "Hugo version: $HUGO_VERSION" \
-	--message "Octave version: $OCTAVE_VERSION"
+	--message "matplotlib version: $MATPLOTLIB_VERSION"
 
 workgit show --patch --stat --find-renames --find-copies --find-copies-harder || true
 echo "For further inspection, go to $WORK_DIR" >&2

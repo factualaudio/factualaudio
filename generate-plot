@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Generates a plot using GNU Octave, and puts it in its proper place for serving.
+# Generates a plot using Python, and puts it in its proper place for serving.
 
 set -e
 
@@ -14,23 +14,11 @@ PLOTBASENAME="../hugo/static/plots/$PLOTNAME"
 #       https://github.com/remarkjs/remark/issues/253
 PLOTBASENAME="${PLOTBASENAME//_/-}"
 
-if [[ -e "python/factualaudio/plots/$PLOTNAME.py" ]]
-then
-	cd python
+cd python
 
-	# SVG preamble is to ensure the font can be found.
-	# Note: it's best to ensure this is the exact same URL as the one in the theme,
-	# such that only one HTTP request needs to be made.
-	python3 -m factualaudio.generate_plot "factualaudio.plots.$PLOTNAME" \
-		--png-output "$PLOTBASENAME.png" --svg-output "$PLOTBASENAME.svg" \
-		--svg-preamble '<?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" ?>'
-else
-	cd m
-
-	# Errors are ignored because of https://savannah.gnu.org/bugs/?50210
-	PLOTNAME="$PLOTNAME" PLOTBASENAME="$PLOTBASENAME" \
-		octave --no-gui --no-history --no-init-file --no-site-file --silent --norc --eval 'generate_plot();' || true
-
-	sed --in-place --file=../plot_svg.sed "$PLOTBASENAME.svg"
-fi
-
+# SVG preamble is to ensure the font can be found.
+# Note: it's best to ensure this is the exact same URL as the one in the theme,
+# such that only one HTTP request needs to be made.
+python3 -m factualaudio.generate_plot "factualaudio.plots.$PLOTNAME" \
+	--png-output "$PLOTBASENAME.png" --svg-output "$PLOTBASENAME.svg" \
+	--svg-preamble '<?xml-stylesheet type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" ?>'

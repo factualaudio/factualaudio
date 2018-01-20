@@ -17,25 +17,7 @@ then
 		PLOTNAME="${PLOTFILE%.py}"
 		PLOTS+=("$PLOTNAME")
 	done
-
-	for PLOTPATH in m/plots/*.m
-	do
-		PLOTFILE="${PLOTPATH##*/}"
-		PLOTNAME="${PLOTFILE%.m}"
-		PLOTS+=("$PLOTNAME")
-	done
 fi
 
-#
-# Sadly, Octave needs an X server to generate plots, even when outputting to a file.
-# We use xvfb as a dummy X server (with an hilarious 2x2 resolution) to keep
-# Octave happy.
-#
-# A cleaner alternative would be to use the gnuplot graphics toolkit (instead of
-# OpenGL), but that toolkit comes with its own set of annoying bugs:
-#   https://savannah.gnu.org/bugs/?52184
-#   https://savannah.gnu.org/bugs/?52186
-#
-xvfb-run --auto-servernum --server-args="-screen 0 2x2x24" \
 parallel --will-cite -v --progress --bar --eta --halt now,fail=1 --shuf ./generate-plot {} ::: "${PLOTS[@]}"
 

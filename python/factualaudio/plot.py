@@ -2,6 +2,9 @@ from factualaudio.data import noise
 from factualaudio.decibel import to_decibels
 import numpy as np
 
+def waveform(axes, wave, sample_rate):
+    return axes.plot(np.arange(0, wave.size) * (1000 / sample_rate), wave)
+
 # Equivalent to axes.amplitude_spectrum(), but plots on an RMS amplitude scale.
 # (i.e. an input sine wave of RMS amplitude X will show up as X on the plot)
 def rms_amplitude_spectrum(axes, wave, noise_level=1e-14, *args, **kwargs):

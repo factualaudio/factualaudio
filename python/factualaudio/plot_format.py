@@ -3,7 +3,7 @@ from matplotlib.patches import Ellipse
 from matplotlib.ticker import ScalarFormatter
 
 def format_waveform_plot(figure):
-    figure.set_figheight(2)
+    figure.set_figheight(2.5)
     axes = figure.axes[0]
     axes.autoscale(axis='x', tight=True)
     axes.axhline(color='gray', zorder=0)
@@ -11,6 +11,7 @@ def format_waveform_plot(figure):
     axes.set_ylabel('Amplitude')
 
 def format_spectrum(figure):
+    figure.set_figheight(4)
     axes = figure.axes[0]
     axes.set_xscale("log")
     axes.set_xlim(20, 20000)

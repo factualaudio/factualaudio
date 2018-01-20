@@ -1,9 +1,5 @@
-from factualaudio.plot_format import format_waveform_plot
-from factualaudio.plot import waveform
 from factualaudio.data import piano_c5
+from factualaudio.plots.sine_wave_1khz import populate_figure_wave
 
 def populate_figure(figure):
-    axes = figure.add_subplot(1, 1, 1)
-    waveform(axes, *piano_c5())
-    format_waveform_plot(figure)
-    axes.set_yticks([])
+    return populate_figure_wave(figure, *piano_c5())

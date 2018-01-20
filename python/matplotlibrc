@@ -5,4 +5,5 @@
 font.sans-serif: Open Sans
 
 figure.dpi: 200
+figure.facecolor: fefefe
 svg.fonttype: none

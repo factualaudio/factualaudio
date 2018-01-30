@@ -68,7 +68,7 @@ In practice, the reference value is indicated by a suffix affixed to the unit. H
 
 Sometimes the suffix is omitted and has to be inferred from the context. For example, it is fairly common to find “dB SPL” written as simply “dB”, especially in mainstream publications. This is best avoided as it can lead to confusion between ratios and levels. Conversely, “dBr” ("relative") is sometimes used to make it explicit that decibels are used to express a ratio, not a level.
 
-Additional suffixes and variants are often used to convey additional information. The most common examples include “peak” or “RMS”, which denote different ways of looking at the amplitude of the signal, and “dBA”, which indicates the use of [A-weighting][]. More on these in later posts.
+Additional suffixes and variants are often used to convey additional information. The most common examples include “peak” or “RMS”, which denote [different ways](<{{% ref "amplitude.md" %}}>) of looking at the amplitude of the signal, and “dBA”, which indicates the use of [A-weighting][]. More on these in later posts.
 
 [a-weighting]: https://en.wikipedia.org/wiki/A-weighting
 

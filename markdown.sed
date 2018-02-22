@@ -1,6 +1,6 @@
 # Clean up after remark mangling quotes inside shortcodes.
 # TODO: figure out a better way to handle this. https://github.com/wooorm/remark/issues/253
-s/\{\{% figure “([^”]*)”/{{% figure "\1"/g
+s/\{\{% figure(-raster)? “([^”]*)”/{{% figure\1 "\2"/g
 
 # Ensure that there is always a non-breaking space between a digit and a letter.
 # This prevents line breaks between a number and its unit, e.g. "3 V".

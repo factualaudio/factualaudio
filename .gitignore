@@ -1,3 +1,4 @@
+/diagrams/*.skb
 /hugo/content/post/*.tidy
 /hugo/static/plots/
 /hugo/public/

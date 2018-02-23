@@ -44,7 +44,7 @@ Because the decibel is a logarithmic unit, it behaves differently from more conv
 
 -   The most useful ratios to keep in mind are +6 dB (×2) and +20 dB (×10).
 -   To invert the ratio, just change the sign: for example, -6 dB is the same as dividing by 2.
--   When combining ratios, decibels don’t multiply; they add up. For example, ×4 (2×2) is 12 dB (6+6), not 36. This might seem strange, but this property makes decibels very convenient to use in practice — it’s easier to add than to multiply.
+-   When combining ratios, decibels don’t multiply; they add up. For example, ×4 (2×2) is 12 dB (6+6), not 36 (6×6). This might seem strange, but this property makes decibels very convenient to use in practice — it’s easier to add than to multiply.
 -   0 dB means ×1, i.e. no change in amplitude.
 -   ×0 is -∞ dB (negative infinity). You might have seen this as the “mute” position on some volume knobs.
 -   For less trivial cases, [online calculators][dbcalc] are available.

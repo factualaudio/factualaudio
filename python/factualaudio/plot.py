@@ -12,7 +12,7 @@ def rms_amplitude_spectrum(axes, wave, noise_level=1e-14, *args, **kwargs):
     kwargs.setdefault("scale", "dB")
     # Add some noise to avoid numerical issues when converting to dB
     wave += noise(wave.size) * noise_level
-    return axes.magnitude_spectrum(wave / (wave.size / np.sqrt(2)), *args, **kwargs)
+    return axes.magnitude_spectrum(wave * np.sqrt(2), *args, **kwargs)
 
 def transfer_function_gain(axes, transfer_function, corner_frequency=1000):
     x = np.linspace(0, 20000, num=1000)

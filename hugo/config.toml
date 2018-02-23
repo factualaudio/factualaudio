@@ -4,6 +4,8 @@ languageCode = "en"
 theme = "ghostwriter"
 copyright = "Etienne Dechamps"
 
+paginatePath = "post"
+
 [Author]
 name = "Etienne Dechamps"
 email = "etienne@edechamps.fr"

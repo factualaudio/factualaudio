@@ -19,3 +19,6 @@ twitter = "https://twitter.com/FactualAudio"
 shareGooglePlus = false
 jqueryURL = "https://code.jquery.com/jquery-3.2.1.slim.js"
 bigfootURL = "https://cdn.rawgit.com/lemonmade/bigfoot/2.1.4"
+
+[Outputs]
+home = ["HTML", "RSS"]

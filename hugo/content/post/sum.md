@@ -65,7 +65,7 @@ From that perspective, peak amplitude is intuitively the sum of peak amplitudes,
 
 # A word about decibels
 
-At this point, I should warn you about [decibels](<{{% ref "decibel.md" %}}>). Due to their logarithmic nature, decibels are great for manipulating ratios and multiplying things, but they tend to get in the way when doing additions. As a gentle reminder, the sum of, say, ×2 (6 dB) and ×5 (14 dB) is ×7, which is 17 dB, *not* 21 dB.
+At this point, I should warn you about [decibels](<{{% ref "decibel.md" %}}>). Due to their logarithmic nature, decibels are great for manipulating ratios and multiplying things, but they tend to get in the way when doing additions. As a gentle reminder, the sum of, say, ×2 (6 dB) and ×5 (14 dB) is ×7, which is 17 dB, *not* 20 dB.
 
 In fact, it gets even more confusing when you realize that what I just did in this example was directly summing two values, which is only a good idea in *some* of the cases that I’ve described above: namely, perfect constructive interference, or when dealing with peak amplitudes. It is not the correct approach when dealing with RMS totals. Which is really unfortunate, because decibel values are typically expressed in RMS, so the intuitive direct approach is wrong in many cases.
 

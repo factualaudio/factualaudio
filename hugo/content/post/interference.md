@@ -35,11 +35,9 @@ Now, such a small delay might seem inconsequential at first, but consider this: 
 
 # Interference patterns
 
-One observation that we can make at this point is that the nature of the interference depends on the difference in propagation delays between the two waves (*path difference*). if the delay is negligible compared to the period, or if it’s close to an integer multiple of the period, we get constructive interference; at the other extreme, if it falls in the middle, we get destructive interference. We’ve also seen that, in space, due to the speed of sound, delay and distance are intricately linked. Thus our two example sources interact to create *interference patterns* where sound amplitude and phase varies wildly from one point in space to the next. In other words, we have a complex *sound [field][]*:
+One observation that we can make at this point is that the nature of the interference depends on the difference in propagation delays between the two waves (*path difference*). if the delay is negligible compared to the period, or if it’s close to an integer multiple of the period, we get constructive interference; at the other extreme, if it falls in the middle, we get destructive interference. We’ve also seen that, in space, due to the speed of sound, delay and distance are intricately linked. Thus our two example sources interact to create *interference patterns* where sound amplitude and phase varies wildly from one point in space to the next. In other words, we have a complex *sound [field][]* that shows patterns of constructive and destructive interference:
 
 {{% figure "plots/point-sources-amplitude-nospreading" "Two point sources, amplitude map" %}}
-
-In our particular example, we can observe an alternating pattern of constructive and destructive interference. In this context, the areas of destructive interference are called *[nodes][]*, and the areas of constructive interference are called *antinodes*. Because there is no sound amplitude at the nodes, it looks like the wave is vibrating in place at the antinodes without moving in space; hence the term *stationary* or *[standing wave][]* to describe this phenomenon.
 
 The above plot assumes each of the two sources individually produces 0 dB at every point in space and ignores the inverse square law. If we instead assume that each source can produce 0 dB at a distance of 1 m and apply the inverse square law, we get a more realistic result:
 
@@ -75,7 +73,7 @@ Using the wavelength, we can rephrase the interference phenomena described in th
 
 # Distance between sources
 
-We’ve observed above that sound from two spatially separated sources can combine to form an alternating constructive and destructive interference pattern (i.e. a standing wave). This is true for the specific example that I’ve chosen, but things do not necessarily turn out that way in the general case. Indeed the sound field might adopt a different shape if any of our initial assumptions (i.e. *identical*, *omnidirectional* sources) are broken. 
+We’ve observed above that sound from two spatially separated sources can combine to form an alternating constructive and destructive interference pattern. This is true for the specific example that I’ve chosen, but things do not necessarily turn out that way in the general case. Indeed the sound field might adopt a different shape if any of our initial assumptions (i.e. *identical*, *omnidirectional* sources) are broken.
 
 More interestingly, the distance between our two sources also matters. Remember that this particular interference pattern is inherently caused by the path difference between the sources and the listener — if the path difference approaches half a wavelength, destructive interference occurs. Consider this: basic geometry tells us that the path difference cannot be more than the distance between the sources themselves. {{% footnote note %}}This maximum is reached if the listener sits on the line that goes through both sources, such that one source lies behind the other from the perspective of the listener.{{% /footnote %}} If that distance is less than a quarter of a wavelength, then destructive interference simply *cannot* occur anywhere in space, and we are left with only constructive interference:
 
@@ -97,8 +95,6 @@ From this we can conclude that interference patterns tend to disappear if the so
 
 [linear]: https://en.wikipedia.org/wiki/Linear_system
 
-[nodes]: https://en.wikipedia.org/wiki/Node_(physics)
-
 [period]: https://en.wikipedia.org/wiki/Periodic_function
 
 [psychoacoustics]: https://en.wikipedia.org/wiki/Psychoacoustics
@@ -106,8 +102,6 @@ From this we can conclude that interference patterns tend to disappear if the so
 [steady state]: https://en.wikipedia.org/wiki/Steady_state
 
 [speed of sound]: https://en.wikipedia.org/wiki/Speed_of_sound
-
-[standing wave]: https://en.wikipedia.org/wiki/Standing_wave
 
 [transient state]: https://en.wikipedia.org/wiki/Transient_state
 

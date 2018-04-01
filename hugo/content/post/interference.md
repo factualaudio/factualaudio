@@ -43,6 +43,8 @@ The above plot assumes each of the two sources individually produces 0 dB at ev
 
 {{% figure "plots/point-sources-amplitude" "Two point sources, amplitude map with spreading" %}}
 
+We can also look at this phenomenon from the perspective of wave propagation by examining the evolution of local sound pressure over time. Paul Falstad’s excellent [simulator][] can be used to [do just that][simulation].
+
 # Transient sound field
 
 In the example above, we’ve determined that interference occurs because the sound from one of the sources arrives 2 milliseconds later than the sound from the other source. I then showed the resulting sound field *after* the sound from both sources has traversed the whole area, and the sound field has stabilized: this is called the *[steady state][]*. This begs the question: what about the *[transient state][]*, i.e. the window of time just before the sound from the second source arrives at the listener?
@@ -85,6 +87,8 @@ From this we can conclude that interference patterns tend to disappear if the so
 
 [continuous]: https://en.wikipedia.org/wiki/Continuous_wave
 
+[simulator]: http://www.falstad.com/ripple/
+
 [free field]: https://en.wikipedia.org/wiki/Free_field_(acoustics)
 
 [field]: https://en.wikipedia.org/wiki/Field_(physics)
@@ -98,6 +102,8 @@ From this we can conclude that interference patterns tend to disappear if the so
 [period]: https://en.wikipedia.org/wiki/Periodic_function
 
 [psychoacoustics]: https://en.wikipedia.org/wiki/Psychoacoustics
+
+[simulation]: http://www.falstad.com/ripple/Ripple.html?rol=$+1+590+73+10+0+848+0.048828125%0As+0+215+136+0+0.5+0+10+100%0As+0+358+137+0+0.5+0+10+100%0A
 
 [steady state]: https://en.wikipedia.org/wiki/Steady_state
 

@@ -1,4 +1,4 @@
-from math import inf
+from math import inf, isnan
 import numpy as np
 
 def xy_to_complex(xy):
@@ -7,17 +7,19 @@ def xy_to_complex(xy):
 def complex_to_xy(comp):
     return [np.real(comp), np.imag(comp)]
 
-def complex_plane(num_points=1000):
-    x, step = np.linspace(0, 1, num=num_points, endpoint=False, retstep=True)
-    x += step / 2  # Ensure the "pixels" are correctly centered
-    y = x[:,np.newaxis]
-    return x + 1j*y
+def complex_plane(width=1000, height=1000, centered=True):
+    x, x_step = np.linspace(0, 1, num=width, endpoint=False, retstep=True)
+    y, y_step = np.linspace(0, 1, num=height, endpoint=False, retstep=True)
+    if centered:
+        x += 0 if isnan(x_step) else (x_step / 2)
+        y += 0 if isnan(y_step) else (y_step / 2)
+    return x[np.newaxis,:] + 1j*y[:,np.newaxis]
 
 def distance_plane(complex_plane, point):
     return np.abs(complex_plane - point)
 
 def waveform_plane(distance_plane, cycle_count=inf):
-    source_phase = (cycle_count % 1) * 2*np.pi + np.pi/2 if cycle_count != inf else 0
+    source_phase = np.pi/2 - (cycle_count % 1) * 2*np.pi if cycle_count != inf else 0
     phase_plane = distance_plane * 2*np.pi + source_phase
     wave = np.exp(1j*phase_plane)
     np.putmask(wave, distance_plane > cycle_count, 0)
